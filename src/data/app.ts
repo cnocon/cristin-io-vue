@@ -143,12 +143,12 @@ export default {
   ],
   services: [
     {
-      icon: "fa-regular fa-code icon-dark icon-rainbow-border",
+      icon: "fa-light fa-code icon-dark icon-rainbow-border",
       title: "Web Development",
       body: "This is my primary area of expertise. I have <strong>15+ years of experience</strong> in the field.",
     },
     {
-      icon: "fa-regular fa-code icon-dark icon-rainbow-border",
+      icon: "fa-light fa-gem icon-dark icon-rainbow-border",
       title: "Mentorship & Interview Prep",
       body: "I can help you <strong>achieve your career goals</strong> and prepare you for job interviews.",
     },

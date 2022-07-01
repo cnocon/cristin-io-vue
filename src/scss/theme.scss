@@ -381,18 +381,6 @@ ul {
       }
     }
 
-    i {
-      display: inline-block;
-      font-size: 1.5rem;
-      text-align: center;
-      color: lighten($color-primary-med, 12%);
-      display: inline-block;
-
-      @media all and (max-width: $breakpoint-sm) {
-        font-size: 1rem;
-      }
-    }
-
     cite {
       display: block;
       font-size: 1rem;
@@ -418,17 +406,6 @@ ul {
       max-width: 320px;
       float: right;
       margin: 10px 0px 2rem 2rem;
-    }
-
-    i {
-      margin-top: 10px;
-      border-radius: 50%;
-      font-size: 28px;
-      font-weight: 200;
-      color: $color-primary;
-      border: 2px solid $border-light-gray;
-      padding: 7.5px;
-      border-radius: 50%;
     }
 
     p {
@@ -616,7 +593,6 @@ code {
 }
 
 .app {
-  max-width: 940px;
   margin-left: auto;
   margin-right: auto;
 

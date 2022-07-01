@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <Connect />
-    <footer v-if="globals" class="app-container">
+  <div class="app-container-full footer">
+    <footer class="app-container">
       <div class="footer-inner app-container-inner">
         <div class="footer-row">
           <div class="footer-column" role="contentinfo">
@@ -46,20 +45,19 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Connect from "@/components/shared/Connect.vue";
+// import Connect from "@/components/shared/Connect.vue";
 
 export default Vue.extend({
   name: "Footer",
-  components: {
-    Connect,
-  },
 });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../scss/_variables.scss";
-
+.app-container-full {
+  background-color: hsl(200, 16%, 97%);
+}
 footer.app-container {
   position: relative;
   z-index: 3;
@@ -68,7 +66,6 @@ footer.app-container {
   padding-top: 1.875rem;
   padding-bottom: 1.875rem;
   width: 100%;
-  background-color: hsl(200, 16%, 97%);
 }
 .footer-inner {
   width: 100%;

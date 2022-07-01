@@ -166,7 +166,7 @@ export default Vue.extend({
       margin-top: 3rem;
     }
 
-    i {
+    svg {
       position: absolute;
       left: 1.25rem;
       top: 1.25rem;

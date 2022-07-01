@@ -32,6 +32,7 @@ import {
 import {
   faFolders,
   faConciergeBell,
+  faGraduationCap,
 } from "@fortawesome/pro-regular-svg-icons";
 import { faRss, faHandshake } from "@fortawesome/pro-duotone-svg-icons";
 import {
@@ -39,12 +40,14 @@ import {
   faUserAstronaut,
   faHashtag,
   faPencil,
+  faCode,
 } from "@fortawesome/pro-light-svg-icons";
 // import { } from "@fortawesome/pro-thin-svg-icons";
 
 /* add icons to the library */
 library.add(
   faEnvelope,
+  faCode,
   faHashtag,
   faUserAstronaut,
   faHandshake,
@@ -65,7 +68,8 @@ library.add(
   faStackOverflow,
   faLinkedinIn,
   faGithub,
-  faPencil
+  faPencil,
+  faGraduationCap
 );
 
 /* add font awesome icon component */

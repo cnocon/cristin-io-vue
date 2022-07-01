@@ -74,7 +74,7 @@
         </div>
 
         <h3>
-          <i class="fal fa-graduation-cap"></i>
+          <i class="fa-light fa-graduation-cap"></i>
           <span>Education</span>
         </h3>
         <div class="education">
@@ -241,7 +241,7 @@ export default Vue.extend({
       }
     }
 
-    i {
+    svg {
       position: absolute;
       left: 0;
       height: 3.5rem;
@@ -297,7 +297,7 @@ export default Vue.extend({
         }
       }
 
-      i {
+      svg {
         @media all and (max-width: $breakpoint-sm) {
           display: none;
         }
@@ -329,7 +329,7 @@ export default Vue.extend({
         }
       }
 
-      i {
+      svg {
         display: none;
       }
     }
@@ -365,7 +365,7 @@ export default Vue.extend({
   .asset-item {
     padding: 5px 0 10px;
 
-    i {
+    svg {
       display: inline-block;
       margin-top: 5px;
       width: 2rem;
@@ -400,7 +400,7 @@ export default Vue.extend({
     p {
       color: $white;
 
-      i {
+      svg {
         display: inline-block;
         color: lighten($color-primary, 10%);
         font-size: 1.25rem;
@@ -504,7 +504,7 @@ export default Vue.extend({
       border-bottom: 0;
     }
 
-    i {
+    svg {
       font-size: 0.875rem;
       color: lighten($color-primary, 20%);
       line-height: inherit;

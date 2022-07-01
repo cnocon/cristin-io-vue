@@ -1,5 +1,5 @@
 <template>
-  <main class="portfolio-page site-content">
+  <main class="portfolio-page site-content" v-if="data">
     <PageHeader
       text="Portfolio"
       :iconClass="`fa-regular fa-folders`"

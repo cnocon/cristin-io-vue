@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 <template>
-  <div class="connect">
+  <div class="app-container connect">
     <PageHeader
       iconClass="fa-duotone fa-handshake"
       text="Connect"
@@ -52,4 +52,71 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import "@/scss/_variables.scss";
+.connect {
+  margin: 2rem auto 4rem;
+
+  li a {
+    background-color: unset !important;
+  }
+
+  li svg {
+    display: block;
+    border: 2px solid #345;
+    border-radius: 50%;
+    // background-color: transparent !important;
+    background-image: $rainbow-gradient-med;
+    // background-size: cover;
+    // color: transparent;
+    // background-clip: text;
+  }
+
+  // ul {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   align-items: center;
+  // }
+
+  // li {
+  //   flex-direction: column;
+  //   flex-grow: 1;
+  //   flex-basis: 44px;
+  //   justify-items: center;
+  // }
+
+  // a {
+  //   position: relative;
+  //   display: block;
+  //   height: 44px;
+  //   width: 44px;
+  //   border-radius: 22px;
+  //   left: 50%;
+  //   top: 50%;
+  //   transform: translate(-50%, -50%);
+  //   color: white;
+  // }
+
+  // li svg {
+  //   position: absolute;
+  //   display: block;
+  //   height: 40px;
+  //   width: 40px;
+  //   left: 50%;
+  //   top: 50%;
+  //   transform: translate(-50%, -50%);
+  //   z-index: 99999999999999999999999999;
+  //   color: white;
+
+  //   &::before {
+  //     content: "";
+  //     height: 44px;
+  //     width: 44px;
+  //     box-shadow: $rainbow-box-shadow-dark;
+  //     border-radius: 22px;
+  //     display: block;
+  //     color: white;
+  //   }
+  // }
+}
+</style>

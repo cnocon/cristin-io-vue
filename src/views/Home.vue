@@ -5,7 +5,9 @@
       text="A Little About Me"
       alignment="left"
     ></PageHeader>
+
     <RotatingHeader />
+
     <div>
       <PageHeader
         iconClass="fa-solid fa-concierge-bell"
@@ -229,7 +231,4 @@ export default Vue.extend({
     }
   }
 }
-// .connect {
-//   padding: 1.875rem 0.9375rem 0.9375rem;
-// }
 </style>

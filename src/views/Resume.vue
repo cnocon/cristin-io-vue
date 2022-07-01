@@ -4,7 +4,7 @@
     class="resume-page app-container site-content container-fluid"
   >
     <PageHeader
-      iconClass="fad fa-file-user"
+      iconClass="fa-duotone fa-file-user"
       text="Resumé & Courses"
     ></PageHeader>
     <div class="row resume-row">

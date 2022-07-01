@@ -10,7 +10,14 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-// import { faUserAstronaut } from "@fortawesome/pro-solid-svg-icons";
+// import { } from "@fortawesome/pro-thin-svg-icons";
+import { faConciergeBell } from "@fortawesome/pro-solid-svg-icons";
+import { faFolders, faGraduationCap } from "@fortawesome/pro-regular-svg-icons";
+import {
+  faRss,
+  faHandshake,
+  faFileUser,
+} from "@fortawesome/pro-duotone-svg-icons";
 import {
   faJsSquare,
   faSass,
@@ -30,19 +37,12 @@ import {
   faChartNetwork,
 } from "@fortawesome/pro-light-svg-icons";
 import {
-  faFolders,
-  faConciergeBell,
-  faGraduationCap,
-} from "@fortawesome/pro-regular-svg-icons";
-import { faRss, faHandshake } from "@fortawesome/pro-duotone-svg-icons";
-import {
   faEnvelope,
   faUserAstronaut,
   faHashtag,
   faPencil,
   faCode,
 } from "@fortawesome/pro-light-svg-icons";
-// import { } from "@fortawesome/pro-thin-svg-icons";
 
 /* add icons to the library */
 library.add(
@@ -69,7 +69,8 @@ library.add(
   faLinkedinIn,
   faGithub,
   faPencil,
-  faGraduationCap
+  faGraduationCap,
+  faFileUser
 );
 
 /* add font awesome icon component */

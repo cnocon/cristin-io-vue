@@ -54,18 +54,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// @import "@/scss/_variables.scss";
+@import "@/scss/_variables.scss";
 
-// .post-header {
-//   text-align: center;
-//   margin: 30px auto;
-// }
+.post-header {
+  text-align: center;
+  margin: 30px auto;
+}
 
-// h1 {
-//   color: $color-primary;
-//   font-size: 36px;
-//   line-height: 1.25em;
-//   font-family: $font-secondary;
-//   font-weight: 900;
-// }
+h1 {
+  color: $color-primary;
+  font-size: 36px;
+  line-height: 1.25em;
+  font-family: $font-secondary;
+  font-weight: 900;
+}
 </style>

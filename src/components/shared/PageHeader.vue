@@ -7,15 +7,17 @@
   </h2>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
   name: "PageHeader",
   props: {
     iconClass: String,
     text: String,
     alignment: String,
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

@@ -41,6 +41,42 @@ export default {
   ],
   courses: [
     {
+      img: "https://i.udemycdn.com/course/240x135/2143416_520c_2.jpg",
+      name: "React Node FullStack",
+      url: "https://www.udemy.com/node-react/",
+      instructor: "Ryan Dhungel",
+      company: "Udemy",
+      certificate_url: "",
+      description: "Learn Node JS API Development from Scratch with MongoDB",
+    },
+    {
+      img: "https://udemy-images.udemy.com/course/480x270/762616_7693_3.jpg",
+      name: "The Complete SQL Bootcamp",
+      url: "https://www.udemy.com/the-complete-sql-bootcamp/learn/v4/overview",
+      instructor: "Jose Portilla, Data Scientist",
+      company: "Udemy",
+      description:
+        "Learn how to read and write complex queries to a database using PostgreSQL.",
+    },
+    {
+      img: "https://udemy-images.udemy.com/course/480x270/705264_caa9_3.jpg",
+      name: "Modern React with Redux",
+      url: "https://www.udemy.com/react-redux/learn/v4/overview",
+      author: "Stephen Grider",
+      company: "Udemy",
+      description:
+        "Master the fundamentals of React and Redux with this tutorial as you develop apps with React Router, Webpack, and ES6.",
+    },
+    {
+      img: "https://udemy-images.udemy.com/course/480x270/1179104_da2b_4.jpg",
+      name: "React: Make Stunning React Websites",
+      url: "https://www.udemy.com/learning-path-react-make-stunning-react-websites/learn/v4/overview",
+      instructor: "Ben Fhala",
+      company: "Packt Publishing",
+      description:
+        "This Learning Path covers the practical skills needed to make great interface components that show you how to ingest your data and display it on the web using a variety of techniques, such as charts and grids.",
+    },
+    {
       name: "Vue JS Essentials with Vuex and Vue Router",
       url: "https://www.udemy.com/course-dashboard-redirect/?course_id=1605992",
       company: "Udemy",
@@ -280,7 +316,7 @@ export default {
   ],
   resume: {
     name: "Cristin O'Connor",
-    jobTitle: "Front End Software Engineer",
+    jobTitle: "Front End Engineer",
     experience: [
       {
         year: 2021,
@@ -546,36 +582,6 @@ export default {
       "Dedicated to ongoing <b>professional development</b>",
       "<b>5+ years</b> of Agile experience",
       "<b>12+ years</b> of experience working on web applications in various capacities",
-    ],
-    courses: [
-      {
-        img: "https://i.udemycdn.com/course/240x135/2143416_520c_2.jpg",
-        title: "React Node FullStack",
-        link: "https://www.udemy.com/node-react/",
-        by: "Ryan Dhungel, via Udemy",
-        desc: "Learn Node JS API Development from Scratch with MongoDB",
-      },
-      {
-        img: "https://udemy-images.udemy.com/course/480x270/762616_7693_3.jpg",
-        title: "The Complete SQL Bootcamp",
-        link: "https://www.udemy.com/the-complete-sql-bootcamp/learn/v4/overview",
-        by: "Jose Portilla, Data Scientist via Udemy",
-        desc: "Learn how to read and write complex queries to a database using PostgreSQL.",
-      },
-      {
-        img: "https://udemy-images.udemy.com/course/480x270/705264_caa9_3.jpg",
-        title: "Modern React with Redux",
-        link: "https://www.udemy.com/react-redux/learn/v4/overview",
-        by: "Stephen Grider (via Udemy)",
-        desc: "Master the fundamentals of React and Redux with this tutorial as you develop apps with React Router, Webpack, and ES6.",
-      },
-      {
-        img: "https://udemy-images.udemy.com/course/480x270/1179104_da2b_4.jpg",
-        title: "React: Make Stunning React Websites",
-        link: "https://www.udemy.com/learning-path-react-make-stunning-react-websites/learn/v4/overview",
-        by: "Ben Fhala, Packt Publishing",
-        desc: "This Learning Path covers the practical skills needed to make great interface components that show you how to ingest your data and display it on the web using a variety of techniques, such as charts and grids.",
-      },
     ],
   },
 };

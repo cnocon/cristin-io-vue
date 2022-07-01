@@ -105,7 +105,7 @@
         <div class="connect">
           <div class="row">
             <div
-              v-for="(profile, index) in globals.profiles"
+              v-for="(profile, index) in data.connect"
               :key="index"
               class="col-lg-2 col-md-4 col-sm-4 col-6"
             >
@@ -163,14 +163,16 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import Icon from "@/components/shared/Icon";
 import PageHeader from "@/components/shared/PageHeader";
+import { IAppData } from "@/types/app.ts";
 import { courses, resume } from "../data/app.ts";
 import ResumeItem from "@/components/ResumeItem";
 import Skill from "@/components/Skill";
 
-export default {
+export default Vue.extend({
   name: "Resume",
   components: {
     ResumeItem,
@@ -178,19 +180,20 @@ export default {
     Icon,
     PageHeader,
   },
-  data() {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+  data(): () => { visible: boolean; data: IAppData; courses: Array } {
     return {
       visible: false,
       data: resume,
       courses: courses,
     };
   },
-  mounted() {
+  mounted(): () => void {
     this.$nextTick(function () {
       this.visible = true;
     });
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

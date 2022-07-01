@@ -1,7 +1,7 @@
 <template>
   <main v-if="visible" class="about-page site-content">
     <PageHeader
-      iconClass="fal fa-user-astronaut"
+      iconClass="fa-light fa-user-astronaut"
       text="A Little About Me"
       alignment="left"
     ></PageHeader>
@@ -9,7 +9,7 @@
       <RotatingHeader />
 
       <PageHeader
-        iconClass="fas fa-concierge-bell"
+        iconClass="fa-solid fa-concierge-bell"
         text="Services"
         alignment="left"
       ></PageHeader>
@@ -43,13 +43,13 @@
       </div>
 
       <PageHeader
-        iconClass="fas fa-rss"
+        iconClass="fa-duotone fa-rss"
         text="Latest Blog Posts"
         alignment="left"
       ></PageHeader>
-      <div v-if="posts" class="row posts">
+      <div v-if="$store.state.posts" class="row posts">
         <div
-          v-for="(post, index) in posts"
+          v-for="(post, index) in $store.state.posts"
           :key="index"
           class="col-lg-4 col-md-6 col-sm-12"
         >
@@ -78,6 +78,7 @@ export default Vue.extend({
       visible: false,
       serviceIconStyle: { marginTop: "2rem", marginBottom: "1rem" },
       data: pageData.data,
+      allPosts: null,
     };
   },
   components: {
@@ -86,11 +87,13 @@ export default Vue.extend({
     RotatingHeader,
     PostCard,
   },
-  computed: mapState("post", ["posts"]),
+  computed: {
+    ...mapState("post", ["posts", "totalPosts"]),
+  },
   created() {
     this.$store.dispatch("post/fetchPosts", {
       page: 1,
-      perPage: 6,
+      perPage: 3,
       excludeBody: true,
     });
   },
@@ -98,137 +101,137 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-// @import "@/scss/_variables.scss";
-// .services-row {
-// 	align-items: center;
+@import "@/scss/_variables.scss";
+.services-row {
+  align-items: center;
 
-// 	.service {
-// 		display: flex;
-// 		flex-direction: column;
-// 		align-content: space-between;
-// 		text-align: center;
-// 		max-width: 22.5rem;
-// 		margin: 0 auto 2rem;
-// 		height: 100%;
+  .service {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    text-align: center;
+    max-width: 22.5rem;
+    margin: 0 auto 2rem;
+    height: 100%;
 
-// 		&:nth-child(2) {
-// 			@media all and (max-width: $breakpoint-sm) {
-// 				padding-bottom: 2rem;
-// 			}
+    &:nth-child(2) {
+      @media all and (max-width: $breakpoint-sm) {
+        padding-bottom: 2rem;
+      }
 
-// 			.icon {
-// 				@media all and (max-width: $breakpoint-sm) {
-// 					margin-top: 0;
-// 				}
-// 			}
-// 		}
+      .icon {
+        @media all and (max-width: $breakpoint-sm) {
+          margin-top: 0;
+        }
+      }
+    }
 
-// 		.icon {
-// 			margin-top: 2rem;
-// 			margin-bottom: 1rem;
-// 		}
+    .icon {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
 
-// 		h6 {
-// 			font-weight: 700;
-// 			font-family: inherit;
-// 			margin-top: 0;
-// 		}
+    h6 {
+      font-weight: 700;
+      font-family: inherit;
+      margin-top: 0;
+    }
 
-// 		span {
-// 			display: block;
-// 		}
+    span {
+      display: block;
+    }
 
-// 		p {
-// 			margin-top: 0;
-// 			font-size: 0.875rem;
-// 			font-weight: 400;
-// 		}
+    p {
+      margin-top: 0;
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
 
-// 		strong {
-// 			font-weight: 600;
-// 		}
-// 	}
+    strong {
+      font-weight: 600;
+    }
+  }
 
-// 	.testimonial {
-// 		background-color: $bg-light-gray;
-// 		border-radius: 4px;
-// 		padding: 0 1.875rem;
-// 		position: relative;
+  .testimonial {
+    background-color: $bg-light-gray;
+    border-radius: 4px;
+    padding: 0 1.875rem;
+    position: relative;
 
-// 		@media all and (max-width: $breakpoint-lg) {
-// 			max-width: 37.5rem;
-// 			margin-left: auto;
-// 			margin-right: auto;
-// 		}
+    @media all and (max-width: $breakpoint-lg) {
+      max-width: 37.5rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-// 		@media all and (min-width: $breakpoint-lg-min) {
-// 			margin-top: 3rem;
-// 		}
+    @media all and (min-width: $breakpoint-lg-min) {
+      margin-top: 3rem;
+    }
 
-// 		i {
-// 			position: absolute;
-// 			left: 1.25rem;
-// 			top: 1.25rem;
+    i {
+      position: absolute;
+      left: 1.25rem;
+      top: 1.25rem;
 
-// 			&::before,
-// 			&::after {
-// 				color: lighten($color-primary-med, 12%);
-// 				font-size: 1.375rem;
-// 			}
-// 		}
+      &::before,
+      &::after {
+        color: lighten($color-primary-med, 12%);
+        font-size: 1.375rem;
+      }
+    }
 
-// 		blockquote {
-// 			padding: 1.25rem;
-// 			box-sizing: border-box;
-// 			left: 0;
-// 			top: 0;
+    blockquote {
+      padding: 1.25rem;
+      box-sizing: border-box;
+      left: 0;
+      top: 0;
 
-// 			p {
-// 				font-weight: 400;
-// 				margin-bottom: 0;
-// 				padding-bottom: 5px;
-// 			}
+      p {
+        font-weight: 400;
+        margin-bottom: 0;
+        padding-bottom: 5px;
+      }
 
-// 			cite {
-// 				margin-top: 0.5rem;
-// 				display: block;
-// 				text-align: right;
-// 				font-size: 1rem;
-// 				font-weight: 800;
-// 				color: lighten($color-primary-med, 5%);
+      cite {
+        margin-top: 0.5rem;
+        display: block;
+        text-align: right;
+        font-size: 1rem;
+        font-weight: 800;
+        color: lighten($color-primary-med, 5%);
 
-// 				&::before {
-// 					content: "– ";
-// 					display: inline-block;
-// 					padding-right: 3px;
-// 				}
-// 			}
+        &::before {
+          content: "– ";
+          display: inline-block;
+          padding-right: 3px;
+        }
+      }
 
-// 			.cite-info {
-// 				display: block;
-// 				text-align: right;
-// 				font-style: italic;
-// 				font-size: 0.9375rem;
-// 			}
-// 		}
-// 	}
-// }
-// .posts {
-// 	padding-top: 3rem;
+      .cite-info {
+        display: block;
+        text-align: right;
+        font-style: italic;
+        font-size: 0.9375rem;
+      }
+    }
+  }
+}
+.posts {
+  padding-top: 3rem;
 
-// 	[class^="col-"] {
-// 		margin-bottom: 2rem;
-// 	}
+  [class^="col-"] {
+    margin-bottom: 2rem;
+  }
 
-// 	.post {
-// 		padding: 1.5rem;
+  .post {
+    padding: 1.5rem;
 
-// 		@media all and (max-width: $breakpoint-sm) {
-// 			padding: 0.9375rem;
-// 		}
-// 	}
-// }
-// .connect {
-// 	padding: 1.875rem 0.9375rem 0.9375rem;
-// }
+    @media all and (max-width: $breakpoint-sm) {
+      padding: 0.9375rem;
+    }
+  }
+}
+.connect {
+  padding: 1.875rem 0.9375rem 0.9375rem;
+}
 </style>

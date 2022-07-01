@@ -2,7 +2,7 @@
 <template>
   <div class="connect">
     <PageHeader
-      iconClass="fas fa-handshake"
+      iconClass="fa-duotone fa-handshake"
       text="Connect"
       alignment="left"
     ></PageHeader>
@@ -14,9 +14,10 @@
       >
         <br />
         <Icon
-          :classes="profile.icon + ` icon-dark icon-rainbow-dark-border`"
+          :classes="profile.icon"
           :text="profile.text"
           :url="profile.link"
+          container-classes=" icon-dark icon-rainbow-dark-border"
         ></Icon>
       </li>
     </ul>
@@ -27,6 +28,7 @@
 import Vue from "vue";
 import appData from "../../data/app.ts";
 import PageHeader from "@/components/shared/PageHeader.vue";
+import Icon from "@/components/shared/Icon.vue";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface IConnection {
@@ -39,6 +41,7 @@ interface IConnection {
 export default Vue.extend({
   name: "Connect",
   components: {
+    Icon,
     PageHeader,
   },
   data() {

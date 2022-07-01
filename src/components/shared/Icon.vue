@@ -1,16 +1,19 @@
 <template>
-  <a v-if="url" :href="url" target="_blank" rel="noopener noreferrer">
-    <font-awesome-icon :icon="classes" />
-    <span v-if="text" class="text" v-html="text"></span>
-  </a>
-  <span v-else>
-    <font-awesome-icon :icon="classes" />
-    <span v-if="text" class="text" v-html="text"></span>
-  </span>
+  <div :class="containerClasses">
+    <a v-if="url" :href="url" target="_blank" rel="noopener noreferrer">
+      <font-awesome-icon :icon="classes" />
+      <span v-if="text" class="text" v-html="text"></span>
+    </a>
+    <span v-else>
+      <font-awesome-icon :icon="classes" />
+      <span v-if="text" class="text" v-html="text"></span>
+    </span>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default Vue.extend({
   name: "Icon",
@@ -18,6 +21,13 @@ export default Vue.extend({
     url: String,
     classes: String,
     text: String,
+    containerClasses: {
+      type: String,
+      default: " icon-dark icon-rainbow-dark-border",
+    },
+  },
+  components: {
+    FontAwesomeIcon,
   },
 });
 </script>

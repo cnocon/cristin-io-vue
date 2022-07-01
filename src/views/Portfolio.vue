@@ -1,9 +1,12 @@
 <template>
   <main class="portfolio-page site-content">
-    <PageHeader text="Portfolio" :iconClass="`far fa-folders`"></PageHeader>
+    <PageHeader
+      text="Portfolio"
+      :iconClass="`fa-regular fa-folders`"
+    ></PageHeader>
     <div v-if="data">
       <div
-        v-for="(item, index) in data"
+        v-for="(item, index) in portfolio"
         :key="index"
         class="row portfolio-item"
       >
@@ -55,6 +58,7 @@ export default {
     PageHeader,
   },
   data() {
+    console.log("portfolio", portfolio);
     return {
       data: portfolio,
     };

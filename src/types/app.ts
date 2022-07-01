@@ -47,4 +47,5 @@ export interface IAppData {
   assets: string[];
   courses: IEducationData[];
   connect: IConnectData[];
+  resume: any;
 }

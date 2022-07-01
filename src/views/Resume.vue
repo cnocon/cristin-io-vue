@@ -168,7 +168,7 @@ import Vue from "vue";
 import Icon from "@/components/shared/Icon";
 import PageHeader from "@/components/shared/PageHeader";
 import { IAppData } from "@/types/app.ts";
-import { courses, resume } from "../data/app.ts";
+import { resume, courses } from "../data/app.ts";
 import ResumeItem from "@/components/ResumeItem";
 import Skill from "@/components/Skill";
 

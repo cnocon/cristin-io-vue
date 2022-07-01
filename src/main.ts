@@ -11,12 +11,23 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
 // import { } from "@fortawesome/pro-thin-svg-icons";
-import { faConciergeBell } from "@fortawesome/pro-solid-svg-icons";
-import { faFolders, faGraduationCap } from "@fortawesome/pro-regular-svg-icons";
+import {
+  faConciergeBell,
+  faChartBar,
+  faQuoteLeft,
+} from "@fortawesome/pro-solid-svg-icons";
+import {
+  faFolders,
+  faGraduationCap,
+  faExclamationTriangle,
+  faGem,
+  faCode,
+} from "@fortawesome/pro-regular-svg-icons";
 import {
   faRss,
   faHandshake,
   faFileUser,
+  faBomb,
 } from "@fortawesome/pro-duotone-svg-icons";
 import {
   faJsSquare,
@@ -33,7 +44,6 @@ import {
 import {
   faBrackets,
   faSubway,
-  faGem,
   faChartNetwork,
 } from "@fortawesome/pro-light-svg-icons";
 import {
@@ -41,18 +51,19 @@ import {
   faUserAstronaut,
   faHashtag,
   faPencil,
-  faCode,
 } from "@fortawesome/pro-light-svg-icons";
 
 /* add icons to the library */
 library.add(
   faEnvelope,
+  faBomb,
   faCode,
   faHashtag,
   faUserAstronaut,
   faHandshake,
   faJsSquare,
   faSass,
+  faQuoteLeft,
   faReact,
   faGit,
   faVuejs,
@@ -70,7 +81,9 @@ library.add(
   faGithub,
   faPencil,
   faGraduationCap,
-  faFileUser
+  faFileUser,
+  faExclamationTriangle,
+  faChartBar
 );
 
 /* add font awesome icon component */

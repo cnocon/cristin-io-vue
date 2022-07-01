@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios from "axios";
 const VUE_APP_BUTTERCMS_API_TOKEN = process.env.VUE_APP_BUTTERCMS_API_TOKEN;
 // const butter = require("buttercms")(VUE_APP_BUTTERCMS_API_TOKEN);
 import Butter from "buttercms";
 const butter = Butter(VUE_APP_BUTTERCMS_API_TOKEN);
-
-// import PostService from "@/services/PostService";
-import { Action } from "vuex";
 
 export const namespaced = true;
 

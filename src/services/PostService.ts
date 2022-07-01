@@ -5,14 +5,14 @@ const VUE_APP_BUTTERCMS_API_TOKEN = process.env.VUE_APP_BUTTERCMS_API_TOKEN;
 import Butter from "buttercms";
 const butter = Butter(VUE_APP_BUTTERCMS_API_TOKEN);
 
-const apiClient = axios.create({
-  baseURL: "https://api.buttercms.com/v2",
-  withCredentials: false,
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-});
+// const apiClient = axios.create({
+//   baseURL: "https://api.buttercms.com/v2",
+//   withCredentials: false,
+//   headers: {
+//     Accept: "application/json",
+//     "Content-Type": "application/json",
+//   },
+// });
 
 export default {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -27,8 +27,8 @@ export default {
   }) {
     return butter.post.list({
       page: page,
-      page_size: perPage,
-      exclude_body: excludeBody,
+      pageSize: perPage,
+      excludeBody: excludeBody,
     });
     // .then(function (response: any) {
     //   console.log(response);
@@ -40,8 +40,9 @@ export default {
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   getPost(payload: string) {
-    return butter.post.retrieve(payload).catch((res) => {
-      console.log(res);
-    });
+    return butter.post.retrieve(payload);
+    // .catch((res) => {
+    //   console.log(res);
+    // });
   },
 };

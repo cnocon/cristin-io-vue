@@ -34,7 +34,7 @@
         >
           <div class="testimonial">
             <blockquote>
-              <i class="fas fa-quote-left"></i>
+              <font-awesome-icon class="fa-solid fa-quote-left" />
               <p v-html="testo.content"></p>
               <cite v-html="testo.cite"></cite>
               <span v-html="testo.citePosition" class="cite-info"></span>
@@ -48,9 +48,9 @@
         text="Latest Blog Posts"
         alignment="left"
       ></PageHeader>
-      <div v-if="$store.state.posts" class="row posts">
+      <div v-if="blogPosts" class="row posts">
         <div
-          v-for="(post, index) in $store.state.posts"
+          v-for="(post, index) in blogPosts"
           :key="index"
           class="col-lg-4 col-md-6 col-sm-12"
         >
@@ -76,9 +76,8 @@ export default Vue.extend({
   name: "Home",
   data() {
     return {
-      visible: false,
-      serviceIconStyle: { marginTop: "2rem", marginBottom: "1rem" },
       data: data,
+      blogPosts: null,
     };
   },
   components: {
@@ -96,6 +95,11 @@ export default Vue.extend({
       perPage: 3,
       excludeBody: true,
     });
+  },
+  mounted() {
+    if (this.blogPosts === null) {
+      this.blogPosts = this.$store.state.post.posts.slice(0, 3);
+    }
   },
 });
 </script>
@@ -119,17 +123,17 @@ export default Vue.extend({
         padding-bottom: 2rem;
       }
 
-      .icon {
-        @media all and (max-width: $breakpoint-sm) {
-          margin-top: 0;
-        }
-      }
+      // .icon {
+      //   @media all and (max-width: $breakpoint-sm) {
+      //     margin-top: 0;
+      //   }
+      // }
     }
 
-    .icon {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
+    // .icon {
+    //   margin-top: 2rem;
+    //   margin-bottom: 1rem;
+    // }
 
     h6 {
       font-weight: 700;

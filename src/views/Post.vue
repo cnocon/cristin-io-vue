@@ -1,7 +1,7 @@
 <template>
   <main class="post-page site-content">
     <PageHeader
-      iconClass="fas fa-chart-bar"
+      iconClass="fa-solid fa-chart-bar"
       :text="'Level: ' + post.tags[0].name"
       v-if="post.tags"
     ></PageHeader>
@@ -15,26 +15,28 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import moment from "moment";
-import appData from '../data/app.ts'
 import { mapState } from "vuex";
 import PageHeader from "@/components/shared/PageHeader.vue";
 import PostMeta from "@/components/post/Meta.vue";
 
-export default {
+export default Vue.extend({
   name: "Post",
   props: ["slug"],
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   components: {
     PageHeader,
     PostMeta,
   },
-  methods: {
+  computed: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     formattedDate(isoString) {
       return moment(isoString).format("MMMM Do, YYYY");
     },
+    ...mapState("post", ["post"]),
+  },
+  methods: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     getJoinString(index) {
       const { categories } = this.post;
@@ -43,14 +45,11 @@ export default {
         : "";
     },
   },
-  computed: {
-    ...mapState("post", ["post"]),
-  },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   created() {
     this.$store.dispatch("post/getPost", this.slug);
   },
-};
+});
 </script>
 
 <style scoped lang="scss">

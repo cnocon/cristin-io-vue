@@ -1,11 +1,7 @@
 /* eslint-disable no-undef */
 <template>
   <div class="app-container connect">
-    <PageHeader
-      iconClass="fa-duotone fa-handshake"
-      text="Connect"
-      alignment="left"
-    ></PageHeader>
+    <PageHeader iconClass="fa-duotone fa-handshake" text="Connect"></PageHeader>
     <ul class="row list-style-none text-center connect">
       <li
         v-for="(profile, index) in connections"
@@ -46,7 +42,7 @@ export default Vue.extend({
   },
   data() {
     return {
-      connections: appData.connect 
+      connections: appData.connect,
     };
   },
 });

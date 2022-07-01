@@ -40,65 +40,65 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-// @import "@/scss/_variables.scss";
-// .col-md-6 {
-// 	&:nth-of-type(1),
-// 	&:nth-of-type(2) {
-// 		@media all and (min-width: $breakpoint-md-min) {
-// 			padding-bottom: 2rem;
-// 		}
-// 	}
-// }
+@import "@/scss/_variables.scss";
+.col-md-6 {
+  &:nth-of-type(1),
+  &:nth-of-type(2) {
+    @media all and (min-width: $breakpoint-md-min) {
+      padding-bottom: 2rem;
+    }
+  }
+}
 
-// .teaser {
-// 	height: 100%;
-// 	padding: 0.5rem 1.5rem 3rem;
-// 	border: 1px solid $border-light-gray;
-// 	box-shadow: $box-shadow-sm;
+.teaser {
+  height: 100%;
+  padding: 0.5rem 1.5rem 3rem;
+  border: 1px solid $border-light-gray;
+  box-shadow: $box-shadow-sm;
 
-// 	@media all and (max-width: $breakpoint-sm) {
-// 		padding: 0.9375rem;
-// 	}
-// }
+  @media all and (max-width: $breakpoint-sm) {
+    padding: 0.9375rem;
+  }
+}
 
-// .post-summary-title {
-// 	font-size: 1.25rem;
-// 	line-height: 1.15em;
-// 	margin-top: 0.9375rem;
-// 	text-align: center;
+.post-summary-title {
+  font-size: 1.25rem;
+  line-height: 1.15em;
+  margin-top: 0.9375rem;
+  text-align: center;
 
-// 	a {
-// 		background-size: 100% 1px;
-// 		font-weight: 700;
-// 		font-family: $font-primary;
-// 		background-image: $rainbow-gradient-radial;
-// 		background-size: 100% 1.5px;
-// 		font-size: 1.35rem;
+  a {
+    background-size: 100% 1px;
+    font-weight: 700;
+    font-family: $font-primary;
+    background-image: $rainbow-gradient-radial;
+    background-size: 100% 1.5px;
+    font-size: 1.35rem;
 
-// 		@media all and (max-width: $breakpoint-sm) {
-// 			font-size: 1.5rem;
-// 		}
-// 	}
-// }
-// .post-summary {
-// 	margin-bottom: 3rem;
-// }
+    @media all and (max-width: $breakpoint-sm) {
+      font-size: 1.5rem;
+    }
+  }
+}
+.post-summary {
+  margin-bottom: 3rem;
+}
 
-// .post-content {
-// 	display: block;
-// 	text-align: center;
+.post-content {
+  display: block;
+  text-align: center;
 
-// 	@media all and (max-width: $breakpoint-sm) {
-// 		text-align: left;
-// 	}
-// }
-// .summary-content {
-// 	font-size: 0.875rem;
-// 	font-weight: 400;
+  @media all and (max-width: $breakpoint-sm) {
+    text-align: left;
+  }
+}
+.summary-content {
+  font-size: 0.875rem;
+  font-weight: 400;
 
-// 	@media all and (max-width: $breakpoint-sm) {
-// 		font-size: 0.875rem;
-// 		padding-bottom: 1rem;
-// 	}
-// }
+  @media all and (max-width: $breakpoint-sm) {
+    font-size: 0.875rem;
+    padding-bottom: 1rem;
+  }
+}
 </style>

@@ -17,7 +17,7 @@
           :classes="profile.icon"
           :text="profile.text"
           :url="profile.link"
-          container-classes=" icon-dark icon-rainbow-dark-border"
+          container-classes=" icon-rainbow-dark-border"
         ></Icon>
       </li>
     </ul>
@@ -56,19 +56,36 @@ export default Vue.extend({
 @import "@/scss/_variables.scss";
 .connect {
   margin: 2rem auto 4rem;
-
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    flex-direction: column;
+    background-color: transparent;
+  }
   li a {
-    background-color: unset !important;
+    display: block;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: transparent;
+    // border: 2px solid #345;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
   }
 
   li svg {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: 3px solid #345;
     display: block;
-    border: 2px solid #345;
-    border-radius: 50%;
-    // background-color: transparent !important;
+    background-color: transparent !important;
     background-image: $rainbow-gradient-med;
-    // background-size: cover;
-    // color: transparent;
+    background-size: cover;
+    color: #345;
     // background-clip: text;
   }
 

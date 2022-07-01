@@ -229,7 +229,7 @@ export default Vue.extend({
     }
   }
 }
-.connect {
-  padding: 1.875rem 0.9375rem 0.9375rem;
-}
+// .connect {
+//   padding: 1.875rem 0.9375rem 0.9375rem;
+// }
 </style>

@@ -614,3 +614,15 @@ code {
   font-weight: 500;
   font-family: 'Fira Code', Menlo, Monaco, monospace;
 }
+
+.app {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media all and (max-width: 939px) {
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

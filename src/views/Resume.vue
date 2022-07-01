@@ -1,6 +1,6 @@
 <template>
   <main
-    v-if="visible"
+    v-if="data"
     class="resume-page app-container site-content container-fluid"
   >
     <PageHeader
@@ -188,11 +188,6 @@ export default Vue.extend({
       resume: data.resume,
       courses: data.courses,
     };
-  },
-  mounted(): () => void {
-    this.$nextTick(function () {
-      this.visible = true;
-    });
   },
 });
 </script>

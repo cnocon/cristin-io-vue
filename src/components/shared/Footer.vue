@@ -1,53 +1,59 @@
 <template>
-  <footer v-if="globals" class="app-container">
-    <div class="footer-inner app-container-inner">
-      <div class="footer-row">
-        <div class="footer-column" role="contentinfo">
-          <p class="copyright">
-            <span class="copyright-year">
-              &copy;{{ new Date().getFullYear() }}
-            </span>
-            <span class="copyright-owner"> Cristin O'Connor</span>
-          </p>
-          <p class="built-with-info">
-            Built using&nbsp;
-            <a
-              href="https://v3.vuejs.org"
-              rel="noopener noreferrer"
-              target="_blank"
-              >Vue 3</a
-            >
-            and
-            <a
-              href="https://next.vuex.vuejs.org/"
-              rel="noopener noreferrer"
-              target="_blank"
-              >Vuex</a
-            >
-          </p>
-        </div>
-        <div class="footer-column">
-          <div>
-            <p>Blog Powered By</p>
-            <img
-              src="/assets/images/logos/buttercms.png"
-              alt="ButterCMS"
-              class="logo"
-            />
+  <div>
+    <Connect />
+    <footer v-if="globals" class="app-container">
+      <div class="footer-inner app-container-inner">
+        <div class="footer-row">
+          <div class="footer-column" role="contentinfo">
+            <p class="copyright">
+              <span class="copyright-year">
+                &copy;{{ new Date().getFullYear() }}
+              </span>
+              <span class="copyright-owner"> Cristin O'Connor</span>
+            </p>
+            <p class="built-with-info">
+              Built using&nbsp;
+              <a
+                href="https://v3.vuejs.org"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Vue 3</a
+              >
+              and
+              <a
+                href="https://next.vuex.vuejs.org/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >Vuex</a
+              >
+            </p>
+          </div>
+          <div class="footer-column">
+            <div>
+              <p>Blog Powered By</p>
+              <img
+                src="/assets/images/logos/buttercms.png"
+                alt="ButterCMS"
+                class="logo"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+import Connect from "@/components/shared/Connect.vue";
+
+export default Vue.extend({
   name: "Footer",
-  props: {
-    globals: {},
+  components: {
+    Connect,
   },
-};
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

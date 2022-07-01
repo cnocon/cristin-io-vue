@@ -50,17 +50,18 @@
 
 <script>
 import PageHeader from "@/components/shared/PageHeader.vue";
-import { portfolio } from "../data/app.ts";
+import data from "../data/app.ts";
 
 export default {
   name: "Portfolio",
   components: {
     PageHeader,
   },
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
-    console.log("portfolio", portfolio);
     return {
-      data: portfolio,
+      data: data,
+      portfolio: data.portfolio,
     };
   },
 };

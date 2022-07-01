@@ -31,12 +31,12 @@ import {
 } from "@fortawesome/pro-light-svg-icons";
 import {
   faFolders,
-  faUserAstronaut,
   faConciergeBell,
 } from "@fortawesome/pro-regular-svg-icons";
 import { faRss, faHandshake } from "@fortawesome/pro-duotone-svg-icons";
 import {
   faEnvelope,
+  faUserAstronaut,
   faHashtag,
   faPencil,
 } from "@fortawesome/pro-light-svg-icons";

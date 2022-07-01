@@ -5,9 +5,8 @@
       text="A Little About Me"
       alignment="left"
     ></PageHeader>
+    <RotatingHeader />
     <div>
-      <RotatingHeader />
-
       <PageHeader
         iconClass="fa-solid fa-concierge-bell"
         text="Services"

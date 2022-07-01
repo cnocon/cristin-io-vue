@@ -7,7 +7,7 @@
       iconClass="fad fa-file-user"
       text="Resumé & Courses"
     ></PageHeader>
-    <div v-if="data.jobTitle" class="row resume-row">
+    <div class="row resume-row">
       <div class="col-lg-7 col-md-12 left-column">
         <span class="rule"></span>
         <div class="work-history">
@@ -21,7 +21,7 @@
               :item="job"
               itemClass="work-item"
               :key="index"
-              v-for="(job, index) in data.experience"
+              v-for="(job, index) in resume.experience"
             />
           </div>
         </div>
@@ -35,7 +35,7 @@
         </h3>
         <div class="service">
           <ResumeItem
-            v-for="(service, index) in data.volunteering"
+            v-for="(service, index) in resume.volunteering"
             class="service-item"
             descItemClass="list-style-none"
             descClass="pl-0"
@@ -50,7 +50,7 @@
         </h3>
         <div class="skills">
           <Skill
-            v-for="(skill, index) in data.skills"
+            v-for="(skill, index) in resume.skills"
             :skill="skill"
             :key="index"
           />
@@ -63,7 +63,7 @@
         <div class="assets pb-3">
           <ul class="mt-0">
             <li
-              v-for="(asset, index) in data.assets"
+              v-for="(asset, index) in resume.assets"
               :key="index"
               class="asset-item"
             >
@@ -84,7 +84,7 @@
             itemClass="edu-item"
             descClass="pl-0"
             descItemClass="list-style-none"
-            v-for="(edu, index) in data.education"
+            v-for="(edu, index) in resume.education"
           />
         </div>
 
@@ -105,7 +105,7 @@
         <div class="connect">
           <div class="row">
             <div
-              v-for="(profile, index) in data.connect"
+              v-for="(profile, index) in connect"
               :key="index"
               class="col-lg-2 col-md-4 col-sm-4 col-6"
             >
@@ -120,7 +120,7 @@
       </div>
     </div>
 
-    <PageHeader iconClass="fal fa-pencil" text="Recent Coursework" />
+    <PageHeader iconClass="fa-light fa-pencil" text="Recent Coursework" />
     <div class="row">
       <div
         v-for="(course, cIndex) in courses"
@@ -168,7 +168,7 @@ import Vue from "vue";
 import Icon from "@/components/shared/Icon";
 import PageHeader from "@/components/shared/PageHeader";
 import { IAppData } from "@/types/app.ts";
-import { resume, courses } from "../data/app.ts";
+import data from "../data/app.ts";
 import ResumeItem from "@/components/ResumeItem";
 import Skill from "@/components/Skill";
 
@@ -184,8 +184,9 @@ export default Vue.extend({
   data(): () => { visible: boolean; data: IAppData; courses: Array } {
     return {
       visible: false,
-      data: resume,
-      courses: courses,
+      data: data,
+      resume: data.resume,
+      courses: data.courses,
     };
   },
   mounted(): () => void {

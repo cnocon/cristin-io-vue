@@ -35,7 +35,11 @@ import {
   faConciergeBell,
 } from "@fortawesome/pro-regular-svg-icons";
 import { faRss, faHandshake } from "@fortawesome/pro-duotone-svg-icons";
-import { faEnvelope, faHashtag } from "@fortawesome/pro-light-svg-icons";
+import {
+  faEnvelope,
+  faHashtag,
+  faPencil,
+} from "@fortawesome/pro-light-svg-icons";
 // import { } from "@fortawesome/pro-thin-svg-icons";
 
 /* add icons to the library */
@@ -60,7 +64,8 @@ library.add(
   faCodepen,
   faStackOverflow,
   faLinkedinIn,
-  faGithub
+  faGithub,
+  faPencil
 );
 
 /* add font awesome icon component */

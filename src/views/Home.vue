@@ -1,5 +1,5 @@
 <template>
-  <main v-if="visible" class="about-page site-content">
+  <main v-if="data" class="about-page site-content">
     <PageHeader
       iconClass="fa-light fa-user-astronaut"
       text="A Little About Me"
@@ -69,7 +69,7 @@ import RotatingHeader from "@/components/RotatingHeader.vue";
 import PostCard from "@/components/post/Card.vue";
 import PageHeader from "@/components/shared/PageHeader.vue";
 import Icon from "@/components/shared/Icon.vue";
-import pageData from "../data/app.ts";
+import data from "../data/app.ts";
 
 export default Vue.extend({
   name: "Home",
@@ -77,8 +77,7 @@ export default Vue.extend({
     return {
       visible: false,
       serviceIconStyle: { marginTop: "2rem", marginBottom: "1rem" },
-      data: pageData.data,
-      allPosts: null,
+      data: data,
     };
   },
   components: {

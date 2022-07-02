@@ -1,5 +1,5 @@
 <template>
-  <main v-if="data" class="about-page site-content">
+  <main v-if="blogPosts" class="home-page site-content">
     <PageHeader
       iconClass="fa-light fa-user-astronaut"
       text="A Little About Me"
@@ -21,12 +21,11 @@
           :key="service.title"
           class="col-12 col-sm-6 col-md-6 col-lg-3 service"
         >
-          <!-- <div class="service"> -->
           <div class="icon"><Icon :classes="service.icon" /></div>
           <h6>{{ service.title }}</h6>
           <p v-html="service.body"></p>
-          <!-- </div> -->
         </div>
+        <!--
         <div
           v-for="testo in data.testimonials"
           :key="testo.cite"
@@ -34,13 +33,14 @@
         >
           <div class="testimonial">
             <blockquote>
-              <font-awesome-icon class="fa-solid fa-quote-left" />
+              <font-awesome-icon icon="fa-solid fa-quote-left" />
               <p v-html="testo.content"></p>
               <cite v-html="testo.cite"></cite>
               <span v-html="testo.citePosition" class="cite-info"></span>
             </blockquote>
           </div>
         </div>
+        -->
       </div>
 
       <PageHeader
@@ -48,17 +48,15 @@
         text="Latest Blog Posts"
         alignment="left"
       ></PageHeader>
-      <div v-if="blogPosts" class="row posts">
+      <div v-if="posts.length > 0" class="row posts">
         <div
-          v-for="(post, index) in blogPosts"
+          v-for="(post, index) in posts.slice(0, 3)"
           :key="index"
           class="col-lg-4 col-md-6 col-sm-12"
         >
           <PostCard :post="post" />
         </div>
       </div>
-
-      <Connect />
     </div>
   </main>
 </template>
@@ -95,9 +93,13 @@ export default Vue.extend({
       perPage: 3,
       excludeBody: true,
     });
+
+    if (!this.blogPosts) {
+      this.blogPosts = this.$store.state.post.posts.slice(0, 3);
+    }
   },
   mounted() {
-    if (this.blogPosts === null) {
+    if (!this.blogPosts) {
       this.blogPosts = this.$store.state.post.posts.slice(0, 3);
     }
   },
@@ -123,17 +125,17 @@ export default Vue.extend({
         padding-bottom: 2rem;
       }
 
-      // .icon {
-      //   @media all and (max-width: $breakpoint-sm) {
-      //     margin-top: 0;
-      //   }
-      // }
+      .icon {
+        @media all and (max-width: $breakpoint-sm) {
+          margin-top: 0;
+        }
+      }
     }
 
-    // .icon {
-    //   margin-top: 2rem;
-    //   margin-bottom: 1rem;
-    // }
+    .icon {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
 
     h6 {
       font-weight: 700;

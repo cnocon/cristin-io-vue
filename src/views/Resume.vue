@@ -102,21 +102,7 @@
           </blockquote>
         </div>
 
-        <div class="connect">
-          <div class="row">
-            <div
-              v-for="(profile, index) in connect"
-              :key="index"
-              class="col-lg-2 col-md-4 col-sm-4 col-6"
-            >
-              <Icon
-                :classes="profile.icon + ` icon-dark icon-rainbow-dark-border`"
-                :text="profile.text"
-                :url="profile.link"
-              ></Icon>
-            </div>
-          </div>
-        </div>
+        <Connect />
       </div>
     </div>
 
@@ -165,19 +151,19 @@
 
 <script lang="ts">
 import Vue from "vue";
-import Icon from "@/components/shared/Icon";
 import PageHeader from "@/components/shared/PageHeader";
 import { IAppData } from "@/types/app.ts";
 import data from "../data/app.ts";
 import ResumeItem from "@/components/ResumeItem";
 import Skill from "@/components/Skill";
+import Connect from "@/components/shared/Connect";
 
 export default Vue.extend({
   name: "Resume",
   components: {
     ResumeItem,
     Skill,
-    Icon,
+    Connect,
     PageHeader,
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -426,18 +412,6 @@ export default Vue.extend({
       font-weight: 500;
       padding-bottom: 20px;
     }
-  }
-}
-.connect {
-  padding-top: 2rem;
-
-  @media all and (max-width: $breakpoint-sm) {
-    padding-bottom: 2rem;
-  }
-
-  [class^="col-"] {
-    text-align: center;
-    padding: 0 0 1rem;
   }
 }
 .course {

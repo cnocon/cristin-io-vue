@@ -23,7 +23,7 @@ export default Vue.extend({
     text: String,
     containerClasses: {
       type: String,
-      default: " icon-dark icon-rainbow-dark-border",
+      default: " icon-rainbow-dark-border",
     },
   },
   components: {
@@ -143,11 +143,6 @@ svg {
   }
 }
 .icon-dark {
-  background-color: $color-primary;
-
-  &::before,
-  &::after {
-    color: white;
-  }
+  // background-color: $color-primary;
 }
 </style>

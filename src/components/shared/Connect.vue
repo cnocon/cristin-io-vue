@@ -50,8 +50,20 @@ export default Vue.extend({
 
 <style lang="scss">
 @import "@/scss/_variables.scss";
+
 .connect {
+  padding-top: 2rem;
   margin: 2rem auto 4rem;
+
+  @media all and (max-width: $breakpoint-sm) {
+    padding-bottom: 2rem;
+  }
+
+  [class^="col-"] {
+    text-align: center;
+    padding: 0 0 1rem;
+  }
+
   ul {
     display: flex;
     flex-wrap: wrap;

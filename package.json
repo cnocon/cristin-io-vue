@@ -1,6 +1,6 @@
 {
-  "name": "cristin-io",
-  "version": "0.1.0",
+  "name": "cristin.io",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

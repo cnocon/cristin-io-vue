@@ -56,12 +56,15 @@ export default Vue.extend({
 <style scoped lang="scss">
 @import "../../scss/_variables.scss";
 .footer-container {
-  background-color: hsl(200, 16%, 97%);
+  background-color: #f6f8f9;
   min-width: 100%;
+  padding: 2rem 0;
 }
 .footer-inner {
   font-size: 0.875rem;
   display: block;
+  max-width: $xl-breakpoint;
+  margin: 0 auto;
 }
 .footer-row {
   display: flex;

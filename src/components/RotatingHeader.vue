@@ -55,12 +55,17 @@ export default Vue.extend({
 <style scoped lang="scss">
 @import "@/scss/_variables.scss";
 .rotate-header {
+  padding-bottom: 1rem;
+
   @media all and (max-width: $breakpoint-sm) {
     font-size: 18px;
     line-height: 24px;
+    font-weight: 400;
   }
 
   span {
+    font-weight: 300;
+
     @media all and (max-width: $breakpoint-sm) {
       min-width: 230px;
 

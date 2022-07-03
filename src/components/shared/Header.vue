@@ -50,6 +50,9 @@ export default {
     display: block;
     border: 1px solid $border-med-gray;
     box-shadow: $rainbow-box-shadow-dark;
+    // padding: 10px;
+    // background-image: $rainbow-gradient-dark;
+    background-color: $primary-dark;
   }
 }
 .site-title {

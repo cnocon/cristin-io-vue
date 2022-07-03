@@ -1,9 +1,44 @@
-$breakpoint-sm: 575px;
-$breakpoint-sm-min: 576px;
-$breakpoint-md: 767px;
-$breakpoint-md-min: 768px;
-$breakpoint-lg: 991px;
-$breakpoint-lg-min: 992px;
+// $breakpoint-sm: 576px;
+// $breakpoint-sm-min: 577px;
+// $breakpoint-md: 768px;
+// $breakpoint-md-min: 769px;
+// $breakpoint-lg: 992px;
+// $breakpoint-lg-min: 993px;
+$xxs-breakpoint-max: 479px;
+$xxs-breakpoint: 480px;
+
+$xs-breakpoint-min: 480px;
+$xs-breakpoint-max: 575px;
+$xs-breakpoint: 576px;
+
+$sm-breakpoint-min: 576px;
+$sm-breakpoint-max: 767px;
+
+
+$md-breakpoint-min: 768px;
+$md-breakpoint-max: 991px;
+
+$lg-breakpoint-min: 992px;
+$lg-breakpoint-max: 1199px;
+
+$xl-breakpoint-min: 1200px;
+$xl-breakpoint-max: 1399px;
+$md-breakpoint: 992px;
+
+$xxl-breakpoint-min: 1400px;
+
+$xs-breakpoint: $sm-breakpoint-min;
+$sm-breakpoint: $md-breakpoint-min;
+$md-breakpoint: $lg-breakpoint-min;
+$lg-breakpoint: $xl-breakpoint-min;
+$xl-breakpoint: $xxl-breakpoint-min;
+
+$breakpoint-sm: $xs-breakpoint-max;
+$breakpoint-sm-min: calc($sm-breakpoint-min + 1);
+$breakpoint-md: $md-breakpoint-min;
+$breakpoint-md-min: calc($md-breakpoint-min + 1);
+$breakpoint-lg: $lg-breakpoint-min;
+$breakpoint-lg-min: calc($lg-breakpoint-min + 1);
 
 $white: #fff;
 $black: hsl(210, 40%, 15%);
@@ -74,14 +109,36 @@ $pastel-rainbow-bar: linear-gradient(90deg,
   hsl(197, 100%, 82.5%) 42.5%,
   hsl(240, 100%, 85%) 57.5%,
   hsl(355, 100%, 90%) 80%);
-$rainbow-box-shadow: hsl(175, 100%, 65%) 0 2px 0,
+
+  $rainbow-box-shadow: hsl(175, 100%, 65%) 0 2px 0,
   hsla(58, 100%, 65%, 0.096) -2px 0 0,
   hsl(240, 80%, 75%) 2px 0 0,
   hsl(355, 80%, 80%) 0 -2px 0;
-$rainbow-box-shadow-dark: hsl(175, 80%, 60%) 0 2px,
+  
+  $rainbow-box-shadow-lg-alt: hsl(0, 80%, 80%) 20px 0 0, 
+  hsl(58, 100%, 60%) 0 20px 0,
+  hsl(175, 100%, 65%) 0 -20px 0,
+  hsl(197, 100%, 55%) -20px 0 0;
+
+$rainbow-box-shadow-lg: hsl(175, 100%, 65%) 0 -2px 0,
+  hsl(58, 100%, 60%) 0 2px 0,
+hsl(197, 100%, 55%) 2px 0 0,
+hsl(240, 80%, 69%) -2px 0 0;
+
+$rainbow-box-shadow-dark: hsl(175, 80%, 50%) 0 2px,
   hsl(58, 100%, 60%) -2px 0,
   hsl(240, 80%, 69%) 2px 0,
-  hsl(355, 80%, 72.5%) 0 -2px 0;
+  hsl(355, 80%, 72.5%) 0 -2px;
+$rainbow-gradient-light-alt: linear-gradient(
+  0,
+  hsl(259, 83%, 80%) 0%,
+  hsl(259, 83%, 85%) 5%,
+  hsl(197, 100%, 85%) 17%,
+  hsl(197, 100%, 85%) 25%,
+  hsl(175, 92%, 87%) 35%,
+  hsl(49, 100%, 70%) 60%,
+  hsl(0, 80%, 90%) 85%
+);
 $rainbow-gradient-light: linear-gradient(
     -240deg,
     hsl(259, 83%, 80%) 0%,
@@ -94,6 +151,22 @@ $rainbow-gradient-light: linear-gradient(
 );
 $rainbow-gradient-med: linear-gradient(
   90deg,
+  $border-purple 0%,
+  $border-blue 20%,
+  $border-green 40%,
+  $border-yellow 55%,
+  $border-red 95%
+);
+$rainbow-gradient-med-alt: linear-gradient(
+  0,
+  $border-purple 0%,
+  $border-blue 20%,
+  $border-green 40%,
+  $border-yellow 55%,
+  $border-red 95%
+);
+$rainbow-gradient-dark-alt: linear-gradient(
+  0,
   $border-purple 0%,
   $border-blue 20%,
   $border-green 40%,
@@ -139,3 +212,45 @@ $rainbow-gradient-radial-light: linear-gradient(
 );
 $nav-text-hover: lighten($black, 17.5%);
 $nav-text: lighten($border-dark-gray, 7.5%);
+
+$primary-dark: darken($color-primary, 10%);
+$primary: #344556;
+$primary-light: lighten($color-primary, 25%);
+
+
+@mixin rainbow-border($colorMode) {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-image: $rainbow-gradient-dark-alt;
+  border-radius: 4px;
+
+  &::before {
+    content: '';
+    width: 100%;
+    display: block;
+    position: absolute;
+    background-image: $rainbow-gradient-light, $rainbow-gradient-med-alt, $rainbow-gradient-light, $rainbow-gradient-med-alt;
+    background-size: 100% 4px, 4px 100%, 100% 4px, 4px 100%;
+    background-position: top, right, bottom, left;
+    z-index: 12;
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    border-radius: 8px;
+    position: absolute;
+    background-color: $primary-dark;
+    border-radius: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    z-index: 12;
+    left: 8px;
+    top: 8px;
+    border-radius: 4px;
+  }
+}
+$duotone-gray: #afb4bb;

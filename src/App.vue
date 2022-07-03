@@ -25,11 +25,13 @@ export default {
 @import "@/scss/_variables.scss";
 @import "@/scss/_grid.scss";
 @import "@/scss/theme";
-
 .app-container {
-  width: 100%;
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 0.9375rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @media all and (min-height: 496px) {
+    min-height: 396px;
+  }
 }
 </style>

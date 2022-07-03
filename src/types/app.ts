@@ -1,3 +1,17 @@
+export interface IAppData {
+  jobTitle: string;
+  experience: IWorkHistory[];
+  volunteering: IVolunteeringData[];
+  skills: string[];
+  assets: string[];
+  courses: IEducationData[];
+  connect: IConnectData[];
+  resume: IResumeData;
+}
+export interface IAward {
+  name: string;
+  detail: string;
+}
 export interface IConnectData {
   icon: string;
   link?: string;
@@ -13,20 +27,19 @@ export interface IEducationData {
   description: string;
   certificate_url: string;
 }
-export interface IAward {
+export interface IResumeData {
   name: string;
-  detail: string;
+  jobTitle: string;
+  experience: IWorkHistory[];
+  volunteering: IVolunteeringData[];
+  skills: string[];
+  assets: string[];
+  education: IEducationData[];
 }
-export interface IWorkHistory {
-  year: number;
-  startDate: string;
-  endDate: string | null;
-  position: string;
-  company: string;
-  location: string;
-  desc: string | null;
-  descList: string[];
-  awards: IAward[];
+export interface ITestimonial {
+  cite?: string;
+  citePosition?: string;
+  content: string;
 }
 export interface IVolunteeringData {
   year: number;
@@ -39,22 +52,14 @@ export interface IVolunteeringData {
   descList: string[];
   awards: IAward[];
 }
-export interface IResumeData {
-  name: string;
-  jobTitle: string;
-  experience: IWorkHistory[];
-  volunteering: IVolunteeringData[];
-  skills: string[];
-  assets: string[];
-  education: IEducationData[];
-}
-export interface IAppData {
-  jobTitle: string;
-  experience: IWorkHistory[];
-  volunteering: IVolunteeringData[];
-  skills: string[];
-  assets: string[];
-  courses: IEducationData[];
-  connect: IConnectData[];
-  resume: IResumeData;
+export interface IWorkHistory {
+  year: number;
+  startDate: string;
+  endDate: string | null;
+  position: string;
+  company: string;
+  location: string;
+  desc: string | null;
+  descList: string[];
+  awards: IAward[];
 }

@@ -1,8 +1,9 @@
 <template>
-  <main class="post-page site-content">
+  <Page classes="post-page">
     <PageHeader
       iconClass="fa-solid fa-chart-bar"
       :text="'Level: ' + post.tags[0].name"
+      alignment="center"
       v-if="post.tags"
     ></PageHeader>
     <article v-show="post" class="post-content">
@@ -12,7 +13,7 @@
       </header>
       <div v-html="post.body" class="post-body"></div>
     </article>
-  </main>
+  </Page>
 </template>
 
 <script lang="ts">
@@ -21,6 +22,7 @@ import moment from "moment";
 import { mapState } from "vuex";
 import PageHeader from "@/components/shared/PageHeader.vue";
 import PostMeta from "@/components/post/Meta.vue";
+import Page from "@/components/shared/Page.vue";
 
 export default Vue.extend({
   name: "BlogPost",
@@ -28,6 +30,7 @@ export default Vue.extend({
   components: {
     PageHeader,
     PostMeta,
+    Page,
   },
   computed: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

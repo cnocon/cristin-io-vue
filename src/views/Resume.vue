@@ -1,16 +1,17 @@
 <template>
-  <main
-    v-if="data"
-    class="resume-page app-container site-content container-fluid"
-  >
-    <PageHeader iconClass="fa-duotone fa-file-user" text="Résumé"></PageHeader>
+  <Page v-if="data" classes="resume-page">
+    <PageHeader
+      iconClass="fa-light fa-file-user"
+      text="Résumé"
+      alignment="center"
+    />
     <div class="row resume-row">
       <div class="col-lg-7 col-md-12 left-column">
         <span class="rule"></span>
         <div class="work-history">
           <div class="rule"></div>
           <h3>
-            <font-awesome-icon icon="fa-light fa-briefcase" />
+            <!--<font-awesome-icon icon="fa-light fa-briefcase" size="sm" />-->
             <span>Work History</span>
           </h3>
           <div class="timeline">
@@ -27,7 +28,9 @@
       <!-- BEGIN RIGHT COLUMN -->
       <div class="col-lg-5 col-md-12 right-column">
         <h3>
-          <font-awesome-icon class="fa-light fa-hands-heart"></font-awesome-icon>
+          <!--<font-awesome-icon
+            class="fa-light fa-hands-heart"
+          ></font-awesome-icon>-->
           <span>Service</span>
         </h3>
         <div class="service">
@@ -54,7 +57,9 @@
         </div>
 
         <h3>
-          <font-awesome-icon class="fa-light fa-gem adjust-top"></font-awesome-icon>
+          <!--<font-awesome-icon
+            class="fa-light fa-gem adjust-top"
+          ></font-awesome-icon>-->
           <span>Assets</span>
         </h3>
         <div class="assets pb-3">
@@ -64,14 +69,14 @@
               :key="index"
               class="asset-item"
             >
-              <i class="fa-r fa-check"></i>
+              <font-awesome-icon icon="fa-regular fa-check" />
               <span v-html="asset"></span>
             </li>
           </ul>
         </div>
 
         <h3>
-          <i class="fa-light fa-graduation-cap"></i>
+          <!--<font-awesome-icon icon="fa-regular fa-graduation-cap" />-->
           <span>Education</span>
         </h3>
         <div class="education">
@@ -85,25 +90,23 @@
           />
         </div>
 
-        <div class="quote">
-          <blockquote>
-            <p>
-              <i class="fa-s fa-quote-left"></i>
-              <span
-                >How we spend our days is, of course, how we spend our lives.
-                What we do with this hour, and that one, is what we are
-                doing.</span
-              >
-            </p>
-            <cite title="Annie Dillard">— Annie Dillard</cite>
-          </blockquote>
-        </div>
-        <Connect />
+        <Testimonial
+          :testimonial="{
+            content:
+              'How we spend our days is, of course, how we spend our lives. What we do with this hour, and that one, is what we are doing.',
+          }"
+        />
+
+        <div class=""><Connect /></div>
       </div>
     </div>
 
-    <PageHeader iconClass="fa-light fa-pencil" text="Recent Coursework" />
-    <div class="courses-row row">
+    <PageHeader
+      iconClass="fa-regular fa-graduation-cap"
+      text="Recent Coursework"
+      alignment="center"
+    />
+    <div class="courses-row">
       <div v-for="(course, cIndex) in courses" :key="cIndex" class="course">
         <figure>
           <img
@@ -138,7 +141,7 @@
         </p>
       </div>
     </div>
-  </main>
+  </Page>
 </template>
 
 <script lang="ts">
@@ -149,6 +152,8 @@ import data from "../data/app.ts";
 import ResumeItem from "@/components/ResumeItem";
 import Skill from "@/components/Skill";
 import Connect from "@/components/shared/Connect.vue";
+import Testimonial from "@/components/shared/Testimonial.vue";
+import Page from "@/components/shared/Page.vue";
 
 export default Vue.extend({
   name: "Resume",
@@ -157,6 +162,8 @@ export default Vue.extend({
     Skill,
     Connect,
     PageHeader,
+    Testimonial,
+    Page,
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data(): () => { data: IAppData; resume: IResumeData; courses: Array } {
@@ -171,7 +178,6 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 @import "@/scss/_variables.scss";
-
 .timeline {
   @media all and (min-width: $breakpoint-sm-min) {
     padding-left: 68px;
@@ -205,51 +211,40 @@ export default Vue.extend({
 .resume-row {
   h3 {
     position: relative;
-    padding: 0 0 2rem 4.25rem;
+    padding: 0 0 1rem 0;
     font-size: 1rem;
     line-height: 3.5rem;
     font-weight: 900;
     font-family: $font-tertiary;
     text-transform: uppercase;
+    margin-top: 0;
 
-    @media all and (max-width: $breakpoint-sm) {
-      &.mt-3 {
-        margin-top: -1rem !important;
-      }
-    }
+    // .svg-wrapper {
+    //   position: absolute;
+    //   height: 3rem;
+    //   width: 3rem;
+    //   border-radius: 50%;
+    //   left: 1.5rem;
+    //   top: 1.5rem;
+    //   transform: translate(-50%, -50%);
+    // }
 
-    svg {
-      position: absolute;
-      left: 0;
-      height: 3.5rem;
-      width: 3.5rem;
-      border-radius: 50%;
-      border: 2px solid $color-primary-light;
-      background-color: $white;
-      z-index: 1;
+    // svg {
+    //   position: absolute;
+    //   padding: 0.5rem;
+    //   height: 2.5rem;
+    //   width: 2.5rem;
+    //   border-radius: 50%;
+    //   border: 2px solid $color-primary-light;
+    //   background-color: $white;
+    //   z-index: 1;
+    //   color: $color-primary-med;
+    //   background-color: $white;
 
-      &::before {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        color: $color-primary-med;
-        background-color: $white;
-        font-size: 1.625rem;
-      }
-
-      &.adjust-top {
-        &::before {
-          top: calc(50% + 2px);
-        }
-      }
-    }
-  }
-  .left-column,
-  .right-column {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    //   &.adjust-top {
+    //     top: calc(50% + 2px);
+    //   }
+    // }
   }
   .left-column {
     h3 {
@@ -312,18 +307,18 @@ export default Vue.extend({
     }
   }
 }
-.service {
-  @media all and (max-width: $breakpoint-sm) {
-    padding-bottom: 3rem;
-  }
+// .service {
+//   @media all and (max-width: $breakpoint-sm) {
+//     padding-bottom: 3rem;
+//   }
 
-  .service-item {
-    padding-bottom: 2rem;
-    @media all and (max-width: $breakpoint-sm) {
-      padding-bottom: 1rem;
-    }
-  }
-}
+//   .service-item {
+//     padding-bottom: 2rem;
+//     @media all and (max-width: $breakpoint-sm) {
+//       padding-bottom: 1rem;
+//     }
+//   }
+// }
 .education {
   @media all and (max-width: $breakpoint-sm) {
     padding-top: 2rem;
@@ -406,83 +401,58 @@ export default Vue.extend({
   }
 }
 .courses-row {
-  display: inline-flex;
+  display: flex;
   width: 100%;
+  flex-wrap: wrap;
   padding: 1rem 0;
 
   /**
     * Mobile Styles (3n)
     */
   .course {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
     padding: 1.5rem;
-    margin: 1rem 0;
-    width: 100%;
-    display: block;
-    text-align: center;
+    flex-basis: 100%;
+    margin: 0 0 2rem;
     box-shadow: $box-shadow-md;
 
-    @media all and (min-width: 768px) {
+    @media all and (min-width: $md-breakpoint-min) {
       flex-basis: calc(50% - 0.5rem);
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      flex-grow: 1;
-    }
+      margin-right: 1rem;
+      margin-left: 0;
 
-    @media all and (min-width: 992px) {
-      flex-basis: calc(33.33334% - 0.8333333333rem);
-    }
-
-    /**
-      * Tablet Styles (2n)
-      */
-    &:nth-child(2n) {
-      // Right of 2 on tablet
-      @media all and (min-width: 768px) {
-        margin: 1rem 0 1rem 1rem;
-        flex-basis: calc(50% - 1rem);
-      }
-    }
-
-    &:nth-child(2n - 1) {
       // First of 2 on tablet
-      @media all and (min-width: 768px) {
-        margin: 1rem 1rem 1rem 0;
-        flex-basis: calc(50% - 1rem);
+      &:nth-child(2n - 1) {
+        // Default
+      }
+      // Second of 2 on tablet
+      &:nth-child(2n) {
+        margin-right: 0;
       }
     }
 
-    /**
-      * Desktop Styles (3n)
-      */
-    &:nth-child(3n) {
-      // Third of 3 on desktop
-      @media all and (min-width: 992px) {
-        margin: 1rem 0 1rem 0.5rem;
-        flex-basis: calc(33.33334% - 0.5rem);
-      }
+    @media all and (min-width: $lg-breakpoint-min) {
+      flex-basis: calc(33.33333% - 0.6666666667rem);
+      margin-left: 0;
+      margin-right: 1rem;
 
-      &:last-child {
-        @media all and (min-width: 992px) {
-          flex-grow: 0;
-          flex-shrink: 1;
-        }
-      }
-    }
-
-    &:nth-child(3n - 1) {
-      // Center of 3 on desktop
-      @media all and (min-width: 992px) {
-        margin: 1rem 0.5rem;
-        flex-basis: calc(33.33334% - 1rem);
-      }
-    }
-
-    &:nth-child(3n - 2) {
       // First of 3 on desktop
-      @media all and (min-width: 992px) {
-        margin: 1rem 0.5rem 1rem 0;
-        flex-basis: calc(33.33334% - 0.5rem);
+      &:nth-child(3n - 2) {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+      // Second of 3 on desktop
+      &:nth-child(3n - 1) {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+      // Third of 3 on desktop
+      &:nth-child(3n) {
+        margin-right: 0;
+        margin-left: 0;
       }
     }
 
@@ -517,12 +487,6 @@ export default Vue.extend({
           background-image: none;
         }
       }
-    }
-
-    h4 {
-      font-family: $font-secondary;
-      margin-top: 0;
-      font-size: 1.125rem;
     }
 
     .description {

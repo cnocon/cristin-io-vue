@@ -47,7 +47,8 @@ export default {
       instructor: "Ryan Dhungel",
       company: "Udemy",
       certificate_url: "",
-      description: "Learn Node JS API Development from Scratch with MongoDB, and master the MERN Stack from Scratch while building a social network from scratch. Covers the entire front end, back end, database & deployment.",
+      description:
+        "Learn Node JS API Development from Scratch with MongoDB, and master the MERN Stack from Scratch while building a social network from scratch. Covers the entire front end, back end, database & deployment.",
     },
     // {
     //   img: "https://img-c.udemycdn.com/course/240x135/4242864_6b64_3.jpg",
@@ -161,7 +162,7 @@ export default {
   testimonials: [
     {
       content:
-        "<strong>Cristin O'Connor is a lifesaver!</strong> Being new to Gatsby.js, I was having a difficult time finding a solution for a blocker. I scoured documentation, tried every combination of keywords, and went to every forum I could think of to find the solution. I came across Cristin's reached out. Cristin was responsive, fast, and knowledgeable. She was also kind and concise which was exactly what a newbie like me needed.",
+        "<p>Cristin O'Connor is a lifesaver! Being new to Gatsby.js, I was having a difficult time finding a solution for a blocker. I scoured documentation, tried every combination of keywords, and went to every forum I could think of to find the solution.</p><p>I came across Cristin's reached out. Cristin was responsive, fast, and knowledgeable. She was also kind and concise which was exactly what a newbie like me needed.</p>",
       cite: "Mariah W.",
       citePosition: "Freelance Web Developer",
     },
@@ -224,7 +225,7 @@ export default {
         "React Context API",
       ],
       previewImage:
-        "https://github.com/cnocon/flash-cards/raw/master/flashcards-app-screenshot-white.png",
+        "https://raw.githubusercontent.com/cnocon/flash-cards/master/flashcards-app-screenshot-white.png",
       previewAlt: "Front End Development Flash Cards Application",
     },
     {
@@ -269,8 +270,7 @@ export default {
         "CRISTIN.IO is an <b>obvious</b> virtual wonderland that includes a front end web development blog authored by yours truly, my résumé, portfolio (surprise!), and some general information about me and the services I offer.",
       ],
       technologies: ["Vue", "Vuex", "Vue Router", "ButterCMS API"],
-      previewImage:
-        "https://github.com/cnocon/vue-cristin-io-2/raw/master/cristin-io.png",
+      previewImage: "https://github.com/cnocon/vue-cristin-io-2/raw/master/cristin-io.png",
       previewAlt: "CRISTIN.IO Website",
     },
     {
@@ -287,8 +287,7 @@ export default {
       ],
       summary: ["Search for and watch content from YouTube."],
       technologies: ["YouTube API V3", "React", "Bootstrap"],
-      previewImage:
-        "https://github.com/cnocon/youtube-search-new/raw/master/youtube-app-screenshot.png",
+      previewImage: "youtube-app-screenshot.png",
       previewAlt: "YouTube Search Application",
     },
     {

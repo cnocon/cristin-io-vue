@@ -1,5 +1,5 @@
 <template>
-  <main class="not-found-page site-content">
+  <main class="not-found-page site-content constraining-container">
     <PageHeader
       iconClass="fa-regular fa-exclamation-triangle"
       text="Oops!"

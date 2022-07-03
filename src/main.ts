@@ -10,25 +10,38 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 /* import specific icons */
-// import { } from "@fortawesome/pro-thin-svg-icons";
-import {
-  faConciergeBell,
-  faChartBar,
-  faQuoteLeft,
-} from "@fortawesome/pro-solid-svg-icons";
+import { faChartBar, faQuoteLeft } from "@fortawesome/pro-solid-svg-icons";
 import {
   faFolders,
   faGraduationCap,
+  faHandshake,
   faExclamationTriangle,
   faGem,
   faCode,
+  faCheck,
+  faArrowLeft,
+  faArrowRight
 } from "@fortawesome/pro-regular-svg-icons";
 import {
-  faRss,
-  faHandshake,
-  faFileUser,
+  // faRss,
+  // faFileUser,
   faBomb,
+  faUserAstronaut,
+  faConciergeBell,
+  faRss,
 } from "@fortawesome/pro-duotone-svg-icons";
+import {
+  faBrackets,
+  faSubway,
+  faPencil,
+  faChartNetwork,
+  faTrophyAlt,
+  faBriefcase,
+  faFileUser,
+  faEnvelope,
+  faHashtag,
+  faHandsHeart,
+} from "@fortawesome/pro-light-svg-icons";
 import {
   faJsSquare,
   faSass,
@@ -41,24 +54,13 @@ import {
   faLinkedinIn,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import {
-  faBrackets,
-  faSubway,
-  faPencil,
-  faChartNetwork,
-  faTrophyAlt,
-  faBriefcase,
-} from "@fortawesome/pro-light-svg-icons";
-import {
-  faEnvelope,
-  faUserAstronaut,
-  faHashtag,
-  faHandsHeart,
-} from "@fortawesome/pro-light-svg-icons";
 
 /* add icons to the library */
 library.add(
+  faCheck,
   faEnvelope,
+  faArrowRight,
+  faArrowLeft,
   faTrophyAlt,
   faBomb,
   faCode,

@@ -1,8 +1,8 @@
 <template>
-  <main class="blog-page site-content">
-    <PageHeader iconClass="fa-duotone fa-rss" text="Blog" />
-    <div class="container app-container">
-      <div class="row post-summary-list" v-if="posts">
+  <Page v-if="posts" classes="blog-page">
+    <PageHeader iconClass="fa-duotone fa-rss" text="Blog" alignment="center" />
+    <div class="container constraining-container">
+      <div class="row">
         <div
           v-for="(post, index) in posts"
           :key="index"
@@ -11,10 +11,10 @@
           <PostCard :post="post" />
         </div>
       </div>
-      <div class="row summary-list" v-if="posts">
+      <div class="row" v-if="posts">
         <div class="col-12">
           <Pagination
-            :perPage="6"
+            :perPage="9"
             :currentPage="page"
             :totalItems="totalPosts"
             routeName="blog"
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </Page>
 </template>
 
 <script lang="ts">
@@ -31,6 +31,7 @@ import { mapState } from "vuex";
 import PageHeader from "@/components/shared/PageHeader.vue";
 import Pagination from "@/components/shared/Pagination.vue";
 import PostCard from "@/components/post/PostCard.vue";
+import Page from "@/components/shared/Page.vue";
 
 export default Vue.extend({
   name: "Blog",
@@ -38,6 +39,7 @@ export default Vue.extend({
     PageHeader,
     PostCard,
     Pagination,
+    Page,
   },
   computed: {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types 
@@ -50,16 +52,9 @@ export default Vue.extend({
   created() {
     this.$store.dispatch("post/fetchPosts", {
       page: this.page,
-      perPage: 6,
+      perPage: 9,
       excludeBody: true,
     });
   },
 });
 </script>
-
-<style scoped lang="scss">
-@import "@/scss/_variables.scss";
-main {
-  margin: 0 auto;
-}
-</style>

@@ -63,7 +63,7 @@ export default Vue.extend({
   margin: 0 0.125rem;
   font-weight: 800;
   letter-spacing: 1px;
-  color: $color-primary;
+  // color: $color-primary;
 }
 
 .posted-in {

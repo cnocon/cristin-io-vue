@@ -1,10 +1,18 @@
 <template>
-  <h2 :class="alignment ? `page-header align-${alignment}` : 'page-header'">
-    <span>
-      <font-awesome-icon :icon="iconClass" />
-      <b>{{ text }}</b>
-    </span>
-  </h2>
+  <div
+    :class="
+      alignment
+        ? `page-header-container align-${alignment}`
+        : 'page-header-container'
+    "
+  >
+    <h2>
+      <span>
+        <font-awesome-icon :icon="iconClass" v-if="iconClass" />
+        <b>{{ text }}</b>
+      </span>
+    </h2>
+  </div>
 </template>
 
 <script lang="ts">
@@ -13,130 +21,97 @@ import Vue from "vue";
 export default Vue.extend({
   name: "PageHeader",
   props: {
-    iconClass: String,
-    text: String,
-    alignment: String,
+    iconClass: {
+      type: String,
+      required: false,
+    },
+    text: {
+      type: String,
+      required: true,
+      default: "",
+    },
+    alignment: {
+      required: false,
+      type: String,
+    }
   },
 });
 </script>
 
 <style scoped lang="scss">
 @import "@/scss/_variables.scss";
-
-svg {
-  color: rgba($color-primary, 0.625);
-}
-
-h2.page-header {
+.page-header-container {
+  width: 100%;
+  position: static;
+  text-align: center;
   position: relative;
-  margin-bottom: 4.75rem !important;
-  white-space: nowrap;
+  margin-bottom: 2rem;
 
-  i {
-    @media all and (max-width: $breakpoint-md) {
-      display: none !important;
+  &.align-center {
+    h2 span {
+      @media all and (min-width: $sm-breakpoint-min) {
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: calc(50% + 3px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 64px;
-    margin: 0;
-    width: 100%;
-    max-width: none;
-    box-sizing: content-box;
-    border-bottom: 3px solid $border-lightest-gray;
+  h2 {
+    display: flex;
+    flex-direction: row;
+    height: 54px;
+    margin-top: 1rem;
 
-    @media all and (max-width: $breakpoint-sm) {
-      top: calc(50% + 4px);
-    }
-  }
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $border-light-gray;
+      bottom: 0;
 
-  &.align-left {
-    &::before {
-      @media all and (min-width: $breakpoint-sm-min) {
-        left: 0;
-        transform: translateY(-50%);
+      @media all and (min-width: $md-breakpoint-min) {
+        top: calc(50% - 1.5px);
       }
     }
 
     span {
-      @media all and (min-width: $breakpoint-sm-min) {
+      @media all and (min-width: $sm-breakpoint-min) {
         left: 0;
-        transform: none;
-      }
-    }
-
-    i {
-      margin-left: 0;
-
-      &::before,
-      &::after {
-        color: darken($border-light-gray, 5%);
+        top: 50%;
+        background-color: $white;
+        z-index: 1;
+        transform: translateY(calc(-50% - 3px));
+        padding-right: 1rem;
+        position: absolute;
       }
     }
   }
 
-  span {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: calc(50% - 28px);
-    transform: translateX(-50%);
+  svg {
+    margin-right: 1rem;
     background-color: $white;
 
-    @media all and (max-width: $breakpoint-sm) {
-      left: 50%;
+    &:not(.fa-duotone) {
+      color: #afb4bb;
     }
   }
 
   b {
     display: inline-block;
-    text-transform: uppercase;
-    line-height: 60px;
-    vertical-align: middle;
-    padding: 0 0.75rem;
-    background: $white;
+    line-height: 1em;
+    background-color: $white;
     font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-family: $font-secondary;
-    color: $color-primary;
+    vertical-align: middle;
+    text-transform: uppercase;
   }
 
-  // i {
-  //   position: relative;
-  //   display: inline-block;
-  //   font-size: 22px;
-  //   line-height: 60px;
-  //   vertical-align: middle;
-  //   border: 3px solid $border-lightest-gray;
-  //   width: 48px;
-  //   height: 48px;
-  //   border-radius: 50%;
-  //   margin-left: 1rem;
-
-  //   &::before,
-  //   &::after {
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  //     color: $border-med-gray;
-  //   }
-
-  //   &.darker {
-  //     &::before,
-  //     &::after {
-  //       color: $color-primary;
-  //     }
-  //   }
-  // }
+  &.align-center {
+    svg {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
 }
-
 </style>

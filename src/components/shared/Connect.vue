@@ -3,7 +3,7 @@
   <div class="app-container connect">
     <PageHeader
       :v-if="includeHeader"
-      iconClass="fa-duotone fa-handshake"
+      iconClass="fa-regular fa-handshake"
       alignment="left"
       text="Connect"
     />
@@ -60,18 +60,21 @@ export default Vue.extend({
 @import "@/scss/_variables.scss";
 
 .connect {
+  padding: 0 0 3rem;
+
   ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    padding: 4rem 0 0;
-    margin: 1rem auto 2rem;
+    padding: 1rem 0;
+    margin: 0;
 
-    @media all and (min-width: 940px) {
+    @media all and (min-width: 992px) {
       flex-wrap: nowrap;
     }
   }
+
   li {
     text-align: center;
     padding: 0 0 1rem;
@@ -82,38 +85,56 @@ export default Vue.extend({
     text-align: center;
     display: flex;
     margin: 1rem 0.5rem;
-    flex-basis: calc(33.333% - 1rem);
+    flex-basis: calc(33.333333334% - 0.6666666667rem);
 
-    @media all and (min-width: 940px) {
-      flex-basis: calc(16.5% - 1rem);
-      // flex-basis: calc((100% * (100 / 6)) - 1rem);
+    @media all and (min-width: $lg-breakpoint-min) {
       margin: 0 1rem 0 0;
       flex-shrink: 1;
       flex-grow: 0;
+
+      @media all and (max-width: $md-breakpoint-max) {
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
     }
-  }
 
-  li a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: transparent !important;
-    background-image: none !important;
-    color: transparent;
-    border-radius: 50%;
-    box-sizing: border-box;
-  }
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: transparent;
+      background-image: none;
+      color: transparent;
+      border-radius: 50%;
+      box-sizing: border-box;
 
-  li svg {
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-    border: 3px solid #345;
-    display: block;
-    background-color: transparent !important;
-    background-image: $rainbow-gradient-med;
-    background-size: cover;
-    color: #345;
+      svg {
+        transform: scale(1);
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+      }
+
+      &:hover {
+        svg {
+          transform: scale(1.15);
+          box-shadow: $box-shadow-lg;
+          color: $link-purple-darker;
+          bordwe-color: $link-purple-darker;
+          background-color: white;
+        }
+      }
+    }
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+      padding: 5px;
+      color: white;
+      border: 2px solid $black;
+      box-shadow: $box-shadow-sm;
+      background-color: $primary-dark;
+    }
   }
 }
 </style>

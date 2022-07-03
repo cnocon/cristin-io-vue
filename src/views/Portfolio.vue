@@ -1,14 +1,15 @@
 <template>
-  <main class="portfolio-page site-content" v-if="data">
+  <Page v-if="data" classes="portfolio-page">
     <PageHeader
       text="Portfolio"
-      :iconClass="`fa-regular fa-folders`"
+      iconClass="fa-regular fa-folders"
+      alignment="center"
     ></PageHeader>
     <div v-if="data">
       <div
         v-for="(item, index) in portfolio"
         :key="index"
-        class="row portfolio-item"
+        class="row no-gutters portfolio-item"
       >
         <div class="col-12">
           <h2>{{ item.name }}</h2>
@@ -45,17 +46,19 @@
         </div>
       </div>
     </div>
-  </main>
+  </Page>
 </template>
 
 <script>
 import PageHeader from "@/components/shared/PageHeader.vue";
+import Page from "@/components/shared/Page.vue";
 import data from "../data/app.ts";
 
 export default {
   name: "Portfolio",
   components: {
     PageHeader,
+    Page,
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   data() {
@@ -95,10 +98,8 @@ li {
   font-weight: 400;
 }
 .screenshot {
+  display: block;
   margin: 2rem 0;
   border: 2px solid $border-light-gray;
-}
-.site-content {
-  margin-top: 0;
 }
 </style>

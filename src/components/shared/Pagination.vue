@@ -6,7 +6,7 @@
         :to="prevRouteObj"
         class="button button-primary"
       >
-        <i class="far fa-arrow-left"></i> Prev
+        <font-awesome-icon icon="fa-regular fa-arrow-left" /> Prev
       </router-link>
     </div>
     <div class="col-sm-12 col-md-6 next">
@@ -15,7 +15,7 @@
         :to="nextRouteObj"
         class="button button-primary"
       >
-        Next <i class="far fa-arrow-right"></i>
+        Next <font-awesome-icon icon="fa-regular fa-arrow-right" />
       </router-link>
     </div>
   </div>

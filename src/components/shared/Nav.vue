@@ -1,6 +1,6 @@
 <template>
   <nav id="nav">
-    <router-link to="/"><span>Home</span></router-link>
+    <router-link to="/" exact="true"><span>Home</span></router-link>
     <router-link to="/blog?page=1" :class="manualActiveClass">
       <span>Blog</span>
     </router-link>
@@ -30,7 +30,7 @@ export default {
 
 #nav {
   display: block;
-  padding: 1rem 0 0;
+  padding: 1rem 0 2rem;
   text-align: center;
   color: $border-med-gray;
 

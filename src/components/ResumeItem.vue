@@ -36,9 +36,9 @@
         {{ desc }}
       </li>
     </ul>
-    <ul class="awards list-style-none" v-if="item.awards.length > 0">
+    <ul class="awards list-style-none" v-if="item && item.awards.length > 0">
       <li v-for="(award, index) in item.awards" :key="index">
-        <font-awsome-icon :icon="`fa-light fa-trophy-alt`" />
+        <font-awesome-icon icon="fa-light fa-trophy-alt" size="2x" />
         <div>
           {{ award.name }}
           <span>{{ award.detail }}</span>
@@ -84,13 +84,10 @@ export default Vue.extend({
   header {
     h4 {
       margin-bottom: 0;
+      margin-top: 0;
     }
 
     @media all and (min-width: $breakpoint-sm-min) {
-      h4 {
-        margin-top: 0;
-      }
-
       p span,
       p span.range {
         font-size: 12px;
@@ -128,6 +125,9 @@ export default Vue.extend({
   }
 
   &.service-item {
+    h4 {
+      margin-top: 0.5rem;
+    }
     &:last-of-type {
       padding-bottom: 1rem;
     }
@@ -269,12 +269,15 @@ export default Vue.extend({
 
     &.awards {
       padding-left: 0;
-      // padding-bottom: 1.5rem;
 
       @media all and (max-width: $breakpoint-sm) {
         padding: 1.5rem 0;
 
         li {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
           div {
             font-size: 12px;
           }
@@ -287,18 +290,21 @@ export default Vue.extend({
         font-weight: 600;
         font-family: $font-secondary;
         text-transform: uppercase;
+        display: flex;
+        align-items: flex-start;
 
-        i {
-          position: absolute;
+        svg {
+          // position: absolute;
           text-shadow: 0 1px 1px hsl(58, 100%, 65%);
-          top: 0.5em;
+          // top: 0.5em;
+          color: darken(gold, 2%);
         }
 
         div {
           display: inline-block;
-          padding-left: 25px;
-          margin-bottom: 0.9375rem;
-          font-size: 0.875rem;
+          padding-left: 1rem;
+          margin-bottom: 1rem;
+          // font-size: 0.875rem;
         }
 
         span {

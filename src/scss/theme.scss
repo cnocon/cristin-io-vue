@@ -50,21 +50,6 @@ main {
   }
 }
 
-.app-container {
-  padding: 0 0.9375rem;
-  margin: 0;
-  width: 100%;
-}
-.app-container-inner {
-  max-width: 62.5rem;
-  margin: 0 auto;
-}
-// header.app-container {
-//   height: 21.125rem;
-// }
-footer.app-container {
-  height: 7.875rem;
-}
 .site-content {
   min-height: calc(100vh - (19.25rem + 7.875rem + 30px));
   display: flex;
@@ -592,13 +577,18 @@ code {
   font-family: 'Fira Code', Menlo, Monaco, monospace;
 }
 
-.app {
-  margin-left: auto;
-  margin-right: auto;
+// .app {
+//   margin-left: auto;
+//   margin-right: auto;
 
-  @media all and (max-width: 939px) {
-    margin: 0;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+//   // @media all and (max-width: 939px) {
+//   //   margin: 0;
+//   //   padding-left: 30px;
+//   //   padding-right: 30px;
+//   // }
+// }
+.constraining-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
 }

@@ -1,5 +1,5 @@
 <template>
-  <main v-if="blogPosts" class="home-page site-content">
+  <main v-if="posts && data" class="home-page site-content">
     <PageHeader
       iconClass="fa-light fa-user-astronaut"
       text="A Little About Me"
@@ -50,13 +50,15 @@
       ></PageHeader>
       <div v-if="posts.length > 0" class="row posts">
         <div
-          v-for="(post, index) in posts.slice(0, 3)"
+          v-for="(post, index) in posts"
           :key="index"
           class="col-lg-4 col-md-6 col-sm-12"
         >
           <PostCard :post="post" />
         </div>
       </div>
+
+      <Connect includeHeader="true" />
     </div>
   </main>
 </template>
@@ -65,23 +67,24 @@
 import Vue from "vue";
 import { mapState } from "vuex";
 import RotatingHeader from "@/components/RotatingHeader.vue";
-import PostCard from "@/components/post/Card.vue";
+import PostCard from "@/components/post/PostCard.vue";
 import PageHeader from "@/components/shared/PageHeader.vue";
 import Icon from "@/components/shared/Icon.vue";
 import data from "../data/app.ts";
+import Connect from "@/components/shared/Connect.vue";
 
 export default Vue.extend({
   name: "Home",
   data() {
     return {
       data: data,
-      blogPosts: null,
     };
   },
   components: {
     PageHeader,
     Icon,
     RotatingHeader,
+    Connect,
     PostCard,
   },
   computed: {
@@ -90,7 +93,7 @@ export default Vue.extend({
   created() {
     this.$store.dispatch("post/fetchPosts", {
       page: 1,
-      perPage: 3,
+      perPage: 6,
       excludeBody: true,
     });
 
@@ -117,7 +120,7 @@ export default Vue.extend({
     align-content: space-between;
     text-align: center;
     max-width: 22.5rem;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
     height: 100%;
 
     &:nth-child(2) {
@@ -223,18 +226,8 @@ export default Vue.extend({
   }
 }
 .posts {
-  padding-top: 3rem;
-
   [class^="col-"] {
-    margin-bottom: 2rem;
-  }
-
-  .post {
-    padding: 1.5rem;
-
-    @media all and (max-width: $breakpoint-sm) {
-      padding: 0.9375rem;
-    }
+    margin-top: 3rem;
   }
 }
 </style>

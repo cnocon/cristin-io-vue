@@ -1,16 +1,11 @@
 <template>
   <nav id="nav">
-    <router-link :to="{ name: 'about' }"><span>Home</span></router-link>
-    <router-link
-      :to="{ name: 'posts', query: { page: '1' } }"
-      :class="manualActiveClass"
-    >
+    <router-link to="/"><span>Home</span></router-link>
+    <router-link to="/blog?page=1" :class="manualActiveClass">
       <span>Blog</span>
     </router-link>
-    <router-link :to="{ name: 'resume' }"><span>Resumé</span></router-link>
-    <router-link :to="{ name: 'portfolio' }"
-      ><span>Portfolio</span></router-link
-    >
+    <router-link to="/resume"><span>Resumé</span></router-link>
+    <router-link to="/portfolio"><span>Portfolio</span></router-link>
   </nav>
 </template>
 
@@ -18,9 +13,11 @@
 export default {
   name: "Nav",
   computed: {
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     manualActiveClass() {
-      return this.$route.fullPath.split("posts").length > 1
-        ? "router-link-active router-link-exact-active"
+      return this.$route.fullPath.split("blog").length &&
+        this.$route.fullPath.split("blog").length > 1
+        ? "router-link-active"
         : "";
     },
   },

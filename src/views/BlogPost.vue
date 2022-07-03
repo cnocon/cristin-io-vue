@@ -8,7 +8,7 @@
     <article v-show="post" class="post-content">
       <header class="post-header">
         <h1>{{ post.title }}</h1>
-        <PostMeta :post="post" categoriesClass="inline" :showDate="false" />
+        <PostMeta :post="post" categoriesClass="inline" :showDate="true" />
       </header>
       <div v-html="post.body" class="post-body"></div>
     </article>
@@ -23,7 +23,7 @@ import PageHeader from "@/components/shared/PageHeader.vue";
 import PostMeta from "@/components/post/Meta.vue";
 
 export default Vue.extend({
-  name: "Post",
+  name: "BlogPost",
   props: ["slug"],
   components: {
     PageHeader,

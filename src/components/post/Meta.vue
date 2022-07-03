@@ -1,6 +1,6 @@
 <template>
   <div class="post-meta">
-    <span class="posted-on">
+    <span v-if="showDate" class="posted-on">
       <time class="entry-date" :datetime="post.published">
         {{ formattedDate(post.published) }}
       </time>
@@ -21,9 +21,13 @@ export default Vue.extend({
   name: "Meta",
   props: {
     post: {},
+    showDate: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   methods: {
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     formattedDate(isoString) {
       return moment(isoString).format("dddd, MMMM D, YYYY");
     },
@@ -38,7 +42,7 @@ export default Vue.extend({
   font-family: $font-secondary;
   font-weight: 400;
   margin-top: 0.9375rem;
-  margin-bottom: 1.25rem;
+  // margin-bottom: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.35rem;
   vertical-align: middle;
@@ -63,8 +67,10 @@ export default Vue.extend({
 }
 
 .posted-in {
-  display: block;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 
   b {
     background-color: $color-primary;
@@ -84,15 +90,14 @@ export default Vue.extend({
   margin-bottom: 10px;
 
   time {
-    text-transform: uppercase;
     border: 0;
     margin-left: 0;
-    padding-left: 0.25rem;
-    font-size: 1.125rem;
-
-    @media all and (max-width: $breakpoint-sm) {
-      font-size: 1rem;
-    }
+    padding-left: 0;
+    font-size: 1rem;
+    letter-spacing: 0;
+    font-weight: 500;
+    font-family: $font-tertiary;
+    text-transform: uppercase;
   }
 }
 </style>

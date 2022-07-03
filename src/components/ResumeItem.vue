@@ -38,7 +38,7 @@
     </ul>
     <ul class="awards list-style-none" v-if="item.awards.length > 0">
       <li v-for="(award, index) in item.awards" :key="index">
-        <i className="fal fa-trophy-alt"></i>
+        <font-awsome-icon :icon="`fa-light fa-trophy-alt`" />
         <div>
           {{ award.name }}
           <span>{{ award.detail }}</span>

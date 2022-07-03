@@ -1,20 +1,20 @@
 /* eslint-disable no-undef */
 <template>
   <div class="app-container connect">
-    <PageHeader iconClass="fa-duotone fa-handshake" text="Connect"></PageHeader>
-    <ul class="row list-style-none text-center connect">
-      <li
-        v-for="(profile, index) in connections"
-        :key="index"
-        class="col-lg-2 col-md-4 col-6"
-      >
-        <br />
+    <PageHeader
+      :v-if="includeHeader"
+      iconClass="fa-duotone fa-handshake"
+      alignment="left"
+      text="Connect"
+    />
+    <ul class="list-style-none text-center">
+      <li v-for="(profile, index) in connections" :key="index">
         <Icon
           :classes="profile.icon"
           :text="profile.text"
           :url="profile.link"
           container-classes=" icon-rainbow-dark-border"
-        ></Icon>
+        />
       </li>
     </ul>
   </div>
@@ -32,6 +32,7 @@ interface IConnection {
   link?: string;
   text: string;
   classes: string;
+  includeHeader: boolean;
 }
 
 export default Vue.extend({
@@ -39,6 +40,13 @@ export default Vue.extend({
   components: {
     Icon,
     PageHeader,
+  },
+  props: {
+    includeHeader: {
+      type: Boolean,
+      default: true,
+      required: false,
+    },
   },
   data() {
     return {
@@ -52,35 +60,47 @@ export default Vue.extend({
 @import "@/scss/_variables.scss";
 
 .connect {
-  padding-top: 2rem;
-  margin: 2rem auto 4rem;
-
-  @media all and (max-width: $breakpoint-sm) {
-    padding-bottom: 2rem;
-  }
-
-  [class^="col-"] {
-    text-align: center;
-    padding: 0 0 1rem;
-  }
-
   ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 0 0;
+    margin: 1rem auto 2rem;
+
+    @media all and (min-width: 940px) {
+      flex-wrap: nowrap;
+    }
   }
   li {
+    text-align: center;
+    padding: 0 0 1rem;
+    padding-top: 1rem !important;
+    white-space: wrap;
     flex-direction: column;
     background-color: transparent;
+    text-align: center;
+    display: flex;
+    margin: 1rem 0.5rem;
+    flex-basis: calc(33.333% - 1rem);
+
+    @media all and (min-width: 940px) {
+      flex-basis: calc(16.5% - 1rem);
+      // flex-basis: calc((100% * (100 / 6)) - 1rem);
+      margin: 0 1rem 0 0;
+      flex-shrink: 1;
+      flex-grow: 0;
+    }
   }
+
   li a {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: transparent !important;
     background-image: none !important;
     color: transparent;
-    // border: 2px solid #345;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
     box-sizing: border-box;
   }
 
@@ -94,54 +114,6 @@ export default Vue.extend({
     background-image: $rainbow-gradient-med;
     background-size: cover;
     color: #345;
-    // background-clip: text;
   }
-
-  // ul {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   align-items: center;
-  // }
-
-  // li {
-  //   flex-direction: column;
-  //   flex-grow: 1;
-  //   flex-basis: 44px;
-  //   justify-items: center;
-  // }
-
-  // a {
-  //   position: relative;
-  //   display: block;
-  //   height: 44px;
-  //   width: 44px;
-  //   border-radius: 22px;
-  //   left: 50%;
-  //   top: 50%;
-  //   transform: translate(-50%, -50%);
-  //   color: white;
-  // }
-
-  // li svg {
-  //   position: absolute;
-  //   display: block;
-  //   height: 40px;
-  //   width: 40px;
-  //   left: 50%;
-  //   top: 50%;
-  //   transform: translate(-50%, -50%);
-  //   z-index: 99999999999999999999999999;
-  //   color: white;
-
-  //   &::before {
-  //     content: "";
-  //     height: 44px;
-  //     width: 44px;
-  //     box-shadow: $rainbow-box-shadow-dark;
-  //     border-radius: 22px;
-  //     display: block;
-  //     color: white;
-  //   }
-  // }
 }
 </style>

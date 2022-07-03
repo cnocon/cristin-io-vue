@@ -2,8 +2,8 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import Portfolio from "@/views/Portfolio.vue";
-import Post from "@/views/Post.vue";
-import Posts from "@/views/Posts.vue";
+import BlogPost from "@/views/BlogPost.vue";
+import Blog from "@/views/Blog.vue";
 import Resume from "@/views/Resume.vue";
 import NotFound from "@/views/NotFound.vue";
 
@@ -26,14 +26,14 @@ const routes: Array<RouteConfig> = [
     component: Resume,
   },
   {
-    path: "/posts",
-    name: "posts",
-    component: Posts,
+    path: "/blog",
+    name: "blog",
+    component: Blog,
   },
   {
-    path: "/posts/:slug",
-    name: "post",
-    component: Post,
+    path: "/blog/:slug",
+    name: "blogPost",
+    component: BlogPost,
     props: true,
   },
   {

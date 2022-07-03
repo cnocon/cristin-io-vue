@@ -1,7 +1,7 @@
 <template>
-  <div class="app-container-full footer">
-    <footer class="app-container">
-      <div class="footer-inner app-container-inner">
+  <div class="footer-container">
+    <footer class="constraining-container footer">
+      <div class="footer-inner">
         <div class="footer-row">
           <div class="footer-column" role="contentinfo">
             <p class="copyright">
@@ -20,7 +20,7 @@
               >
               and
               <a
-                href="https://next.vuex.vuejs.org/"
+                href="https://next.vuex.vuejs.org"
                 rel="noopener noreferrer"
                 target="_blank"
                 >Vuex</a
@@ -31,7 +31,7 @@
             <div>
               <p>Blog Powered By</p>
               <img
-                src="/assets/images/logos/buttercms.png"
+                src="@/assets/images/logos/buttercms.png"
                 alt="ButterCMS"
                 class="logo"
               />
@@ -55,21 +55,11 @@ export default Vue.extend({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../../scss/_variables.scss";
-.app-container-full {
+.footer-container {
   background-color: hsl(200, 16%, 97%);
-}
-footer.app-container {
-  position: relative;
-  z-index: 3;
-  justify-self: flex-end;
-  align-self: flex-end;
-  padding-top: 1.875rem;
-  padding-bottom: 1.875rem;
-  width: 100%;
+  min-width: 100%;
 }
 .footer-inner {
-  width: 100%;
-  margin: 0 auto;
   font-size: 0.875rem;
   display: block;
 }

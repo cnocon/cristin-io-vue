@@ -1,21 +1,25 @@
 <template>
   <router-link
     :to="{
-      name: 'post',
+      name: 'blogPost',
       params: { slug: post.slug },
     }"
     class="post"
   >
     <div class="post-header">
-      <div class="img-wrapper">
+      <h4 class="text-center">
+        <span>{{ post.title }}</span>
+      </h4>
+      <div class="post-meta">
+        <PostMeta :post="post" />
+      </div>
+      <!--<div class="img-wrapper">
         <img :src="post.featured_image" :alt="post.featured_image_alt" />
       </div>
-      <h6>
-        <span>{{ post.title }}</span>
-      </h6>
+      <br />-->
     </div>
     <p>
-      <b>{{ formattedDate(post.published) }}</b>
+      <b v-if="showDate">{{ formattedDate(post.published) }}</b>
       {{ post.summary }}
     </p>
   </router-link>
@@ -24,11 +28,22 @@
 <script lang="ts">
 import Vue from "vue";
 import moment from "moment";
+import PostMeta from "@/components/post/Meta.vue";
 
 export default Vue.extend({
-  name: "Card",
+  name: "PostCard",
   props: {
-    post: {},
+    post: {
+      required: true,
+    },
+    showDate: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
+  components: {
+    PostMeta,
   },
   methods: {
     formattedDate(isoString) {
@@ -43,7 +58,10 @@ export default Vue.extend({
 a {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  justify-items: flex-start;
+  align-content: flex-start;
   border-radius: 4px;
   box-shadow: $box-shadow-md;
   background-image: $rainbow-gradient-light;
@@ -51,6 +69,11 @@ a {
   background-size: 100% 3.5px;
   background-position: top;
   transition: all 0.3s ease;
+  padding: 1rem 14px;
+
+  @media all and (max-width: $breakpoint-sm) {
+    padding: 0.9375rem;
+  }
 
   &:hover {
     border-radius: 4px;
@@ -65,46 +88,46 @@ a {
 
 .post-header {
   overflow: hidden;
-  margin-top: 1rem;
+  position: relative;
 
   .img-wrapper {
-    float: left;
-    position: relative;
-    height: 2.625rem;
-    width: 2.625rem;
     border: 1px solid $color-primary;
     margin: 0.1875rem 0.625rem 3px 3px;
     box-shadow: rgba($color-primary, 0.5) 0 1px 1px,
       rgba($color-primary, 0.5) 0 -1px 1px, rgba($color-primary, 0.5) 1px 0 1px,
       rgba($color-primary, 0.5) -1px 0 1px;
     border-radius: 50%;
-    // margin-right: calc(0.9375rem + 3px);
     text-align: center;
-    // box-sizing: content-box;
-
-    img {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      max-width: 100%;
-      height: 1.875rem;
-      transform: translate(-50%, -50%);
-    }
+    height: calc(2.625rem - 2px);
+    width: calc(2.625rem - 2px);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    display: none;
   }
 }
 
-h6 {
+h4 {
   text-transform: none;
   font-family: $font-secondary;
-  margin-top: 0;
+  margin-bottom: 0;
 
   span {
     font-weight: 800;
-    max-width: calc(100% - 55px);
+    // max-width: calc(100% - 55px);
     display: inline-block;
-    font-size: 1.125rem;
+    // font-size: 1.125rem;
+    line-height: 1.25em;
+    font-family: $font-secondary;
+    font-size: 1.5rem;
   }
+}
+
+.post-meta {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding-top: 0;
 }
 
 p {
@@ -113,6 +136,11 @@ p {
   font-size: 14px;
   margin-bottom: 15px;
   line-height: 1.8491428572em;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   b {
     text-transform: uppercase;

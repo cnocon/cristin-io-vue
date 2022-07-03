@@ -44,27 +44,33 @@ import {
 import {
   faBrackets,
   faSubway,
+  faPencil,
   faChartNetwork,
+  faTrophyAlt,
+  faBriefcase,
 } from "@fortawesome/pro-light-svg-icons";
 import {
   faEnvelope,
   faUserAstronaut,
   faHashtag,
-  faPencil,
+  faHandsHeart,
 } from "@fortawesome/pro-light-svg-icons";
 
 /* add icons to the library */
 library.add(
   faEnvelope,
+  faTrophyAlt,
   faBomb,
   faCode,
   faHashtag,
+  faHandsHeart,
   faUserAstronaut,
   faHandshake,
   faJsSquare,
   faSass,
   faQuoteLeft,
   faReact,
+  faBriefcase,
   faGit,
   faVuejs,
   faNodeJs,

@@ -34,7 +34,11 @@ export const actions = {
       excludeBody,
     }: { page: number; perPage: number; excludeBody: boolean }
   ) {
-    const allPosts = butter.post.list({ page, perPage, excludeBody });
+    const allPosts = butter.post.list({
+      page: page || 1,
+      page_size: perPage || 3,
+      exclude_body: excludeBody || false,
+    });
     allPosts
       .then((response: { data?: { data?: any; meta: { count: any } } }) => {
         commit("SET_POSTS", response?.data?.data);

@@ -3,17 +3,14 @@
     v-if="data"
     class="resume-page app-container site-content container-fluid"
   >
-    <PageHeader
-      iconClass="fa-duotone fa-file-user"
-      text="Resumé & Courses"
-    ></PageHeader>
+    <PageHeader iconClass="fa-duotone fa-file-user" text="Résumé"></PageHeader>
     <div class="row resume-row">
       <div class="col-lg-7 col-md-12 left-column">
         <span class="rule"></span>
         <div class="work-history">
           <div class="rule"></div>
           <h3>
-            <i class="fal fa-briefcase"></i>
+            <font-awesome-icon icon="fa-light fa-briefcase" />
             <span>Work History</span>
           </h3>
           <div class="timeline">
@@ -30,7 +27,7 @@
       <!-- BEGIN RIGHT COLUMN -->
       <div class="col-lg-5 col-md-12 right-column">
         <h3>
-          <i class="fal fa-hands-heart"></i>
+          <font-awesome-icon class="fa-light fa-hands-heart"></font-awesome-icon>
           <span>Service</span>
         </h3>
         <div class="service">
@@ -45,7 +42,7 @@
         </div>
 
         <h3>
-          <i class="fal fa-code"></i>
+          <font-awesome-icon class="fa-regular fa-code"></font-awesome-icon>
           <span>Skills</span>
         </h3>
         <div class="skills">
@@ -57,7 +54,7 @@
         </div>
 
         <h3>
-          <i class="fal fa-gem adjust-top"></i>
+          <font-awesome-icon class="fa-light fa-gem adjust-top"></font-awesome-icon>
           <span>Assets</span>
         </h3>
         <div class="assets pb-3">
@@ -67,7 +64,7 @@
               :key="index"
               class="asset-item"
             >
-              <i class="far fa-check"></i>
+              <i class="fa-r fa-check"></i>
               <span v-html="asset"></span>
             </li>
           </ul>
@@ -91,7 +88,7 @@
         <div class="quote">
           <blockquote>
             <p>
-              <i class="fas fa-quote-left"></i>
+              <i class="fa-s fa-quote-left"></i>
               <span
                 >How we spend our days is, of course, how we spend our lives.
                 What we do with this hour, and that one, is what we are
@@ -101,18 +98,13 @@
             <cite title="Annie Dillard">— Annie Dillard</cite>
           </blockquote>
         </div>
-
         <Connect />
       </div>
     </div>
 
     <PageHeader iconClass="fa-light fa-pencil" text="Recent Coursework" />
-    <div class="row">
-      <div
-        v-for="(course, cIndex) in courses"
-        :key="cIndex"
-        class="col-12 col-sm-6 col-md-6 col-lg-4 course"
-      >
+    <div class="courses-row row">
+      <div v-for="(course, cIndex) in courses" :key="cIndex" class="course">
         <figure>
           <img
             :data-url="course.img"
@@ -141,7 +133,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            View Certificate <i class="far fa-external-link"></i>
+            View Certificate <i class="fa-r fa-external-link"></i>
           </a>
         </p>
       </div>
@@ -152,11 +144,11 @@
 <script lang="ts">
 import Vue from "vue";
 import PageHeader from "@/components/shared/PageHeader";
-import { IAppData } from "@/types/app.ts";
+import { IAppData, IResumeData } from "@/types/app.ts";
 import data from "../data/app.ts";
 import ResumeItem from "@/components/ResumeItem";
 import Skill from "@/components/Skill";
-import Connect from "@/components/shared/Connect";
+import Connect from "@/components/shared/Connect.vue";
 
 export default Vue.extend({
   name: "Resume",
@@ -167,9 +159,8 @@ export default Vue.extend({
     PageHeader,
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  data(): () => { visible: boolean; data: IAppData; courses: Array } {
+  data(): () => { data: IAppData; resume: IResumeData; courses: Array } {
     return {
-      visible: false,
       data: data,
       resume: data.resume,
       courses: data.courses,
@@ -371,7 +362,7 @@ export default Vue.extend({
   }
 }
 .quote {
-  padding: 0 0 2rem;
+  padding: 0;
   max-width: 37.5rem;
   margin: 0 auto;
 
@@ -414,96 +405,182 @@ export default Vue.extend({
     }
   }
 }
-.course {
-  margin-bottom: 4rem;
-  text-align: center;
+.courses-row {
+  display: inline-flex;
+  width: 100%;
+  padding: 1rem 0;
 
-  figure {
-    display: inline-block;
+  /**
+    * Mobile Styles (3n)
+    */
+  .course {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    width: 100%;
+    display: block;
     text-align: center;
-    height: 80px;
-    padding-bottom: 1.5rem;
-  }
-  img {
-    text-align: center;
-    max-height: 80px;
-  }
+    box-shadow: $box-shadow-md;
 
-  h3 {
-    margin-top: 0.5rem;
-    line-height: 1em;
+    @media all and (min-width: 768px) {
+      flex-basis: calc(50% - 0.5rem);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      flex-grow: 1;
+    }
 
-    a {
-      color: $color-primary;
-      font-weight: 700;
-      font-size: 1.45rem;
-      line-height: 1.25em;
-      font-family: $font-primary;
-      background-image: $rainbow-gradient-med;
-      background-size: 100% 2px;
-      background-position: center bottom;
-      background-repeat: no-repeat;
+    @media all and (min-width: 992px) {
+      flex-basis: calc(33.33334% - 0.8333333333rem);
+    }
 
-      &:hover {
-        background-image: none;
+    /**
+      * Tablet Styles (2n)
+      */
+    &:nth-child(2n) {
+      // Right of 2 on tablet
+      @media all and (min-width: 768px) {
+        margin: 1rem 0 1rem 1rem;
+        flex-basis: calc(50% - 1rem);
       }
     }
-  }
 
-  h4 {
-    font-family: $font-secondary;
-    margin-top: 0;
-    font-size: 1.125rem;
-  }
-
-  .description {
-    font-weight: 400;
-    margin-top: 0;
-  }
-
-  .instructor,
-  .company {
-    font-family: $font-tertiary;
-    font-weight: 400;
-  }
-
-  .btn-link {
-    display: inline-block;
-    line-height: 1.25em;
-    font-weight: 400;
-    border-bottom: 1px solid $border-med-gray;
-    background-image: none;
-
-    &:hover {
-      border-bottom: 0;
+    &:nth-child(2n - 1) {
+      // First of 2 on tablet
+      @media all and (min-width: 768px) {
+        margin: 1rem 1rem 1rem 0;
+        flex-basis: calc(50% - 1rem);
+      }
     }
 
-    svg {
-      font-size: 0.875rem;
-      color: lighten($color-primary, 20%);
-      line-height: inherit;
-      vertical-align: top;
+    /**
+      * Desktop Styles (3n)
+      */
+    &:nth-child(3n) {
+      // Third of 3 on desktop
+      @media all and (min-width: 992px) {
+        margin: 1rem 0 1rem 0.5rem;
+        flex-basis: calc(33.33334% - 0.5rem);
+      }
+
+      &:last-child {
+        @media all and (min-width: 992px) {
+          flex-grow: 0;
+          flex-shrink: 1;
+        }
+      }
     }
+
+    &:nth-child(3n - 1) {
+      // Center of 3 on desktop
+      @media all and (min-width: 992px) {
+        margin: 1rem 0.5rem;
+        flex-basis: calc(33.33334% - 1rem);
+      }
+    }
+
+    &:nth-child(3n - 2) {
+      // First of 3 on desktop
+      @media all and (min-width: 992px) {
+        margin: 1rem 0.5rem 1rem 0;
+        flex-basis: calc(33.33334% - 0.5rem);
+      }
+    }
+
+    figure {
+      display: inline-block;
+      text-align: center;
+      height: 80px;
+      padding-bottom: 1.5rem;
+    }
+    img {
+      text-align: center;
+      max-height: 80px;
+      border-radius: 8px;
+    }
+
+    h3 {
+      margin-top: 0.5rem;
+      line-height: 1em;
+
+      a {
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 1.45rem;
+        line-height: 1.25em;
+        font-family: $font-primary;
+        background-image: $rainbow-gradient-med;
+        background-size: 100% 2px;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-image: none;
+        }
+      }
+    }
+
+    h4 {
+      font-family: $font-secondary;
+      margin-top: 0;
+      font-size: 1.125rem;
+    }
+
+    .description {
+      font-weight: 400;
+      margin-top: 0;
+      text-align: left;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.5rem;
+    }
+
+    .instructor,
+    .company {
+      font-family: $font-tertiary;
+      font-weight: 400;
+    }
+
+    .btn-link {
+      display: inline-block;
+      line-height: 1.25em;
+      font-weight: 400;
+      border-bottom: 1px solid $border-med-gray;
+      background-image: none;
+
+      &:hover {
+        border-bottom: 0;
+      }
+
+      svg {
+        font-size: 0.875rem;
+        color: lighten($color-primary, 20%);
+        line-height: inherit;
+        vertical-align: top;
+      }
+    }
+
+    // .certificate {
+    // 	display: inline-block;
+    // 	margin: 1rem 0 0;
+    // 	border: 2px solid $color-primary;
+    // 	color: $color-primary;
+    // 	text-transform: uppercase;
+    // 	padding: 1px 10px;
+    // 	border-radius: 5px;
+    // 	text-decoration: none;
+    // 	font-weight: 600;
+    // 	font-size: 14px;
+    // 	transition: background-color 0.2s, color 0.2s;
+    // 	background-image: none;
+
+    // 	&:hover {
+    // 		background-color: $color-primary;
+    // 		color: $white;
+    // 	}
+    // }
   }
-
-  // .certificate {
-  // 	display: inline-block;
-  // 	margin: 1rem 0 0;
-  // 	border: 2px solid $color-primary;
-  // 	color: $color-primary;
-  // 	text-transform: uppercase;
-  // 	padding: 1px 10px;
-  // 	border-radius: 5px;
-  // 	text-decoration: none;
-  // 	font-weight: 600;
-  // 	font-size: 14px;
-  // 	transition: background-color 0.2s, color 0.2s;
-  // 	background-image: none;
-
-  // 	&:hover {
-  // 		background-color: $color-primary;
-  // 		color: $white;
-  // 	}
-  // }
 }
 </style>

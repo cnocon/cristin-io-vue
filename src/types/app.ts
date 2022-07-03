@@ -39,6 +39,15 @@ export interface IVolunteeringData {
   descList: string[];
   awards: IAward[];
 }
+export interface IResumeData {
+  name: string;
+  jobTitle: string;
+  experience: IWorkHistory[];
+  volunteering: IVolunteeringData[];
+  skills: string[];
+  assets: string[];
+  education: IEducationData[];
+}
 export interface IAppData {
   jobTitle: string;
   experience: IWorkHistory[];
@@ -47,5 +56,5 @@ export interface IAppData {
   assets: string[];
   courses: IEducationData[];
   connect: IConnectData[];
-  resume: any;
+  resume: IResumeData;
 }

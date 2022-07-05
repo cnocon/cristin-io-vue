@@ -58,25 +58,27 @@ export default Vue.extend({
   height: 100%;
   width: 100%;
   position: relative;
+  border-radius: 4px;
+  overflow: hidden;
   z-index: 0;
 
   a {
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-radius: 8px;
+    border-radius: 3px;
     box-shadow: $box-shadow-sm;
-    background-image: $rainbow-gradient-light, $rainbow-gradient-med-alt, $rainbow-gradient-light, $rainbow-gradient-med-alt;
-    background-size: 100% 4px, 4px 100%, 100% 4px, 4px 100%;
+    background-image: $rainbow-gradient-light, $rainbow-gradient-med-alt,
+      $rainbow-gradient-light, $rainbow-gradient-med-alt;
+    background-size: 100% 3px, 3px 100%, 100% 3px, 3px 100%;
     background-position: top, right, bottom, left;
     padding: 1.5rem;
-    color: white;
 
     &:hover {
       &::after {
-        border: 4px solid $primary-light;
-        transform: scale(1.025);
-        border-radius: 8px;
+        // transform: scale(1.025);
+        opacity: 0;
+        box-shadow: $box-shadow-lg;
       }
     }
 
@@ -85,13 +87,13 @@ export default Vue.extend({
       display: block;
       position: absolute;
       overflow: hidden;
-      height: calc(100% - 8px);
-      width: calc(100% - 8px);
-      background-color: $primary-dark;
-      border-radius: 4px;
+      height: calc(100% - 4px);
+      width: calc(100% - 4px);
+      background-color: #f6f8f9; // $primary-dark;
+      border-radius: 2px;
       left: 0;
       top: 0;
-      margin: 4px;
+      margin: 2px;
       z-index: 0;
     }
 
@@ -122,7 +124,6 @@ export default Vue.extend({
   }
 
   h4 {
-    color: white;
     text-transform: none;
     font-family: $font-secondary;
     margin-bottom: 0;
@@ -140,15 +141,10 @@ export default Vue.extend({
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     padding-top: 0;
-
-    * {
-      color: white;
-    }
   }
 
   p {
     font-weight: 400;
-    color: white;
     font-family: $font-secondary;
     font-size: 14px;
     margin-bottom: 15px;

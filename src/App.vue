@@ -25,13 +25,12 @@ export default {
 @import "@/scss/_variables.scss";
 @import "@/scss/_grid.scss";
 @import "@/scss/theme";
+main {
+  height: 100vh;
+}
 .app-container {
   height: 100%;
   display: flex;
   flex-direction: column;
-
-  @media all and (min-height: 496px) {
-    min-height: 396px;
-  }
 }
 </style>

@@ -115,7 +115,7 @@ export default Vue.extend({
     align-content: space-between;
     text-align: center;
     max-width: 22.5rem;
-    margin: 0 auto;
+    margin: 0 auto 3rem;
     height: 100%;
 
     &:nth-child(2) {

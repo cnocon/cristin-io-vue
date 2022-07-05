@@ -42,7 +42,6 @@ export default Vue.extend({
   font-family: $font-secondary;
   font-weight: 400;
   margin-top: 0.9375rem;
-  // margin-bottom: 1.25rem;
   font-size: 0.875rem;
   line-height: 1.35rem;
   vertical-align: middle;
@@ -51,53 +50,55 @@ export default Vue.extend({
   @media all and (max-width: $breakpoint-sm) {
     margin-bottom: 0.75rem;
   }
-}
 
-.posted-in b,
-.posted-on time {
-  font-size: 0.875rem;
-  line-height: 1.8em;
-  vertical-align: top;
-  border-radius: 4px;
-  padding: 1px 0.5rem 0.125rem;
-  margin: 0 0.125rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  // color: $color-primary;
-}
 
-.posted-in {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
+  .posted-in b,
+  .posted-on time {
+    font-size: 0.875rem;
+    line-height: 1.8em;
+    vertical-align: top;
+    border-radius: 4px;
+    padding: 1px 0.5rem 0.125rem;
+    margin: 0 0.125rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    // color: $color-primary;
+  }
 
-  b {
-    background-color: $color-primary;
-    color: $white;
-    font-family: $font-primary;
-    font-weight: 700;
+  .posted-in {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 
-    @media all and (max-width: $breakpoint-sm) {
-      font-size: 0.8125rem;
+    b {
+      background-color: $color-primary;
+      color: $white;
+      font-family: $font-primary;
+      font-weight: 700;
+
+      @media all and (max-width: $breakpoint-sm) {
+        font-size: 0.8125rem;
+      }
     }
   }
-}
 
-.posted-on {
-  display: block;
-  text-align: center;
-  margin-bottom: 10px;
+  .posted-on {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
 
-  time {
-    border: 0;
-    margin-left: 0;
-    padding-left: 0;
-    font-size: 1rem;
-    letter-spacing: 0;
-    font-weight: 500;
-    font-family: $font-tertiary;
-    text-transform: uppercase;
+    time {
+      border: 0;
+      margin-left: 0;
+      padding-left: 0;
+      font-size: 0.875rem; // 14px
+      letter-spacing: 0;
+      font-weight: 500;
+      color: $black;
+      font-family: $font-tertiary;
+      text-transform: uppercase;
+    }
   }
 }
 </style>

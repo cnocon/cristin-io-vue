@@ -37,12 +37,8 @@
           </ul>
         </div>
 
-        <div class="col-12 col-md-5">
-          <img
-            class="screenshot"
-            :src="item.previewImage"
-            :alt="item.previewAlt"
-          />
+        <div class="col-12 col-md-5 image-wrapper">
+          <img :src="item.previewImage" :alt="item.previewAlt" />
         </div>
       </div>
     </div>
@@ -50,9 +46,9 @@
 </template>
 
 <script>
-import PageHeader from "@/components/shared/PageHeader.vue";
-import Page from "@/components/shared/Page.vue";
-import data from "../data/app.ts";
+import PageHeader from "@/components/shared/PageHeader.vue"
+import Page from "@/components/shared/Page.vue"
+import data from "../data/app.ts"
 
 export default {
   name: "Portfolio",
@@ -65,9 +61,16 @@ export default {
     return {
       data: data,
       portfolio: data.portfolio,
-    };
+    }
   },
-};
+  methods: {
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+    computedImgSrc(src) {
+      const img = `@/assets/images/pages/portfolio/${src}`
+      return img
+    },
+  },
+}
 </script>
 
 <style scoped lang="scss">
@@ -97,9 +100,20 @@ p,
 li {
   font-weight: 400;
 }
-.screenshot {
-  display: block;
-  margin: 2rem 0;
-  border: 2px solid $border-light-gray;
+
+.image-wrapper {
+  @media all and (min-width: $breakpoint-md) {
+    padding-left: 3rem;
+  }
+
+  img {
+    display: block;
+    border: 2px solid $border-light-gray;
+
+    @media all and (min-width: $breakpoint-md) {
+      margin: 0 0 2rem 1rem;
+      max-width: 500px;
+    }
+  }
 }
 </style>

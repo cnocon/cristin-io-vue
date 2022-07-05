@@ -1,6 +1,6 @@
 <template>
   <nav id="nav">
-    <router-link to="/" exact="true"><span>Home</span></router-link>
+    <router-link to="/" :exact="true"><span>Home</span></router-link>
     <router-link to="/blog?page=1" :class="manualActiveClass">
       <span>Blog</span>
     </router-link>

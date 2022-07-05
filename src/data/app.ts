@@ -197,8 +197,7 @@ export default {
         "Webpack",
         "Storybook",
       ],
-      previewImage:
-        "https://github.com/cnocon/react-github-stats-card-v2/raw/master/stat-card-preview.png",
+      previewImage: "https://www.dropbox.com/s/h1fk109v2aluaoz/stats-card.png?dl=1",
       previewAlt: "GitHub Stats Card for React Component",
     },
     {
@@ -224,8 +223,7 @@ export default {
         "React",
         "React Context API",
       ],
-      previewImage:
-        "https://raw.githubusercontent.com/cnocon/flash-cards/master/flashcards-app-screenshot-white.png",
+      previewImage: "https://www.dropbox.com/s/eo7a2yqya792c5n/flashcards.png?dl=1",
       previewAlt: "Front End Development Flash Cards Application",
     },
     {
@@ -250,15 +248,14 @@ export default {
         "Open Weather API",
         "Bootstrap",
       ],
-      previewImage:
-        "https://github.com/cnocon/weather-charts-app-new/raw/master/weather-app-screenshot.png",
+      previewImage: "https://www.dropbox.com/s/30e7e2v8qp4yu49/weather.png?dl=1",
       previewAlt: "Weather Charts Application",
     },
     {
       name: "CRISTIN.IO",
       links: [
         {
-          href: "https://github.com/cnocon/weather-charts-app-new",
+          href: "https://github.com/cnocon/vue-cristin-io-2",
           text: "GitHub",
         },
         {
@@ -270,7 +267,7 @@ export default {
         "CRISTIN.IO is an <b>obvious</b> virtual wonderland that includes a front end web development blog authored by yours truly, my résumé, portfolio (surprise!), and some general information about me and the services I offer.",
       ],
       technologies: ["Vue", "Vuex", "Vue Router", "ButterCMS API"],
-      previewImage: "https://github.com/cnocon/vue-cristin-io-2/raw/master/cristin-io.png",
+      previewImage: "https://www.dropbox.com/s/r9luh3jymxesfus/cristin-io.png?dl=1",
       previewAlt: "CRISTIN.IO Website",
     },
     {
@@ -287,7 +284,7 @@ export default {
       ],
       summary: ["Search for and watch content from YouTube."],
       technologies: ["YouTube API V3", "React", "Bootstrap"],
-      previewImage: "youtube-app-screenshot.png",
+      previewImage: "https://www.dropbox.com/s/3gc2omblwyfpgz2/youtube.png?dl=1",
       previewAlt: "YouTube Search Application",
     },
     {
@@ -309,7 +306,7 @@ export default {
         "JavaScript (ES6)",
         "PHP",
       ],
-      previewImage: "https://www.dropbox.com/s/qt4ieh7flxadcij/clq.png?raw=1",
+      previewImage: "https://www.dropbox.com/s/b9kw7gs380pfwck/clq.png?dl=1",
       previewAlt: "CenturyLink Small Business Website (for Clearlink)",
     },
   ],
@@ -620,4 +617,4 @@ export default {
       "<b>12+ years</b> of experience working on web applications in various capacities",
     ],
   },
-};
+}

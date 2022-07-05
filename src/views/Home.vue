@@ -56,22 +56,22 @@
     </Section>
 
     <Section>
-      <Connect includeHeader="true" />
+      <Connect :includeHeader="true" />
     </Section>
   </Page>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { mapState } from "vuex";
-import RotatingHeader from "@/components/RotatingHeader.vue";
-import PostCard from "@/components/post/PostCard.vue";
-import PageHeader from "@/components/shared/PageHeader.vue";
-import Icon from "@/components/shared/Icon.vue";
-import data from "../data/app.ts";
-import Connect from "@/components/shared/Connect.vue";
-import Section from "@/components/shared/Section.vue";
-import Page from "@/components/shared/Page.vue";
+import Vue from "vue"
+import { mapState } from "vuex"
+import RotatingHeader from "@/components/RotatingHeader.vue"
+import PostCard from "@/components/post/PostCard.vue"
+import PageHeader from "@/components/shared/PageHeader.vue"
+import Icon from "@/components/shared/Icon.vue"
+import data from "../data/app.ts"
+import Connect from "@/components/shared/Connect.vue"
+import Section from "@/components/shared/Section.vue"
+import Page from "@/components/shared/Page.vue"
 // import Testimonial from "@/components/shared/Testimonial.vue";
 
 export default Vue.extend({
@@ -79,7 +79,7 @@ export default Vue.extend({
   data() {
     return {
       data: data,
-    };
+    }
   },
   components: {
     PageHeader,
@@ -99,9 +99,9 @@ export default Vue.extend({
       page: 1,
       perPage: 6,
       excludeBody: true,
-    });
+    })
   },
-});
+})
 </script>
 
 <style scoped lang="scss">

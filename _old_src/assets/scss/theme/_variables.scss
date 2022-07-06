@@ -47,12 +47,14 @@ $box-shadow-sm: 0 1px 2px 0 hsla(0, 0%, 0%, 0.17), 0 1px 5px 0 hsla(0, 0%, 0%, 0
 $box-shadow-md: 0 3px 7px 0 hsla(0, 0%, 0%, 0.15), 0 1px 9px 0 hsla(0, 0, 0, 0.15);
 $box-shadow-lg: 0 2px 10px 0 hsla(0, 0%, 0%, 0.17), 0 1px 13px 0 hsla(0, 0, 0, 0.11);
 $line-height-gr: 1.618;
-// $font-primary: 'Work Sans', Arial, sans-serif;
+
 $font-primary: 'Open Sans', Arial, sans-serif;
-// $font-secondary: 'Work Sans', Geneva, Tahoma, sans-serif;
+$font-body: $font-primary;
 $font-secondary: Lato, Geneva, Tahoma, sans-serif;
+$font-body-alt: $font-secondary;
 $font-tertiary: Oswald, Impact, sans-serif;
-// $font-tertiary: 'Work Sans', Impact, sans-serif;
+$font-header: $font-tertiary;
+$font-code: "PT Mono", Monaco, Menlo, monospace;
 
 $yellow: hsla(58, 100, 65, 0.7);
 

@@ -1,0 +1,35 @@
+@mixin rainbow-border($colorMode) {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background-image: $rainbow-gradient-dark-alt;
+  border-radius: 4px;
+
+  &::before {
+    content: '';
+    width: 100%;
+    display: block;
+    position: absolute;
+    background-image: $rainbow-gradient-light, $rainbow-gradient-med-alt, $rainbow-gradient-light, $rainbow-gradient-med-alt;
+    background-size: 100% 4px, 4px 100%, 100% 4px, 4px 100%;
+    background-position: top, right, bottom, left;
+    z-index: 12;
+    left: 0;
+    top: 0;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    border-radius: 8px;
+    position: absolute;
+    background-color: $primary-dark;
+    border-radius: 8px;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    z-index: 12;
+    left: 8px;
+    top: 8px;
+    border-radius: 4px;
+  }
+}

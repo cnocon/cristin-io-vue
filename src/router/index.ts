@@ -1,19 +1,24 @@
-import Vue from "vue";
-import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
-import Portfolio from "@/views/Portfolio.vue";
-import BlogPost from "@/views/BlogPost.vue";
-import Blog from "@/views/Blog.vue";
-import Resume from "@/views/Resume.vue";
-import NotFound from "@/views/NotFound.vue";
+import Vue from "vue"
+import VueRouter, { RouteConfig } from "vue-router"
+import HomeNew from "../views/HomeNew.vue"
+import Portfolio from "@/views/Portfolio.vue"
+import BlogPost from "@/views/BlogPost.vue"
+import Blog from "@/views/Blog.vue"
+import Resume from "@/views/Resume.vue"
+import NotFound from "@/views/NotFound.vue"
+import Documentation from "@/views/Documentation.vue"
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: HomeNew,
+  },{
+    path: "/documentation",
+    name: "documentation",
+    component: Documentation,
   },
   {
     path: "/portfolio",

@@ -36,7 +36,7 @@ export interface IResumeData {
   assets: string[];
   education: IEducationData[];
 }
-export interface ITestimonial {
+export interface IQuote {
   cite?: string;
   citePosition?: string;
   content: string;

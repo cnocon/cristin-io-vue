@@ -48,14 +48,6 @@
     </Section>
 
     <Section>
-      <Testimonial
-        classes="testimonial"
-        :testimonial="data.testimonials[0]"
-        key="page-testimonial"
-      />
-    </Section>
-
-    <Section>
       <Connect :includeHeader="true" />
     </Section>
   </Page>
@@ -72,7 +64,6 @@ import data from "../data/app.ts"
 import Connect from "@/components/shared/Connect.vue"
 import Section from "@/components/shared/Section.vue"
 import Page from "@/components/shared/Page.vue"
-// import Testimonial from "@/components/shared/Testimonial.vue";
 
 export default Vue.extend({
   name: "Home",
@@ -89,7 +80,6 @@ export default Vue.extend({
     PostCard,
     Section,
     Page,
-    // Testimonial,
   },
   computed: {
     ...mapState("post", ["posts", "totalPosts"]),
@@ -100,6 +90,11 @@ export default Vue.extend({
       perPage: 6,
       excludeBody: true,
     })
+  },
+  mounted() {
+    if (!this.show) {
+      this.show = true
+    }
   },
 })
 </script>

@@ -1,12 +1,12 @@
 <template>
-  <div v-if="testimonial" class="testimonial" :class="classes">
+  <div v-if="quote" class="quote" :class="classes">
     <blockquote>
       <!--<font-awesome-icon icon="fa-solid fa-quote-left" />-->
-      <div v-if="testimonial.content" v-html="testimonial.content"></div>
-      <cite v-if="testimonial.cite" v-html="testimonial.cite"></cite>
+      <div v-if="quote.content" v-html="quote.content"></div>
+      <cite v-if="quote.cite" v-html="quote.cite"></cite>
       <span
-        v-if="testimonial.citePosition"
-        v-html="testimonial.citePosition"
+        v-if="quote.citePosition"
+        v-html="quote.citePosition"
         class="cite-info"
       ></span>
     </blockquote>
@@ -14,11 +14,11 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import { ITestimonial } from "@/types/app.ts";
+import Vue from "vue"
+import { IQuote } from "@/types/app"
 
 export default Vue.extend({
-  name: "Testimonial",
+  name: "Quote",
   props: {
     classes: {
       type: String,
@@ -27,7 +27,7 @@ export default Vue.extend({
     testimonial: {
       type: Object,
       required: true,
-    } as ITestimonial,
+    } as IQuote,
   },
 });
 </script>
@@ -35,7 +35,7 @@ export default Vue.extend({
 <style scoped lang="scss">
 @import "@/scss/_variables.scss";
 
-.testimonial {
+.quote {
   position: relative;
   max-width: $sm-breakpoint;
   margin: 4rem auto;

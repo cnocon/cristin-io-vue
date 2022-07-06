@@ -5,41 +5,39 @@
       iconClass="fa-regular fa-folders"
       alignment="center"
     ></PageHeader>
-    <div v-if="data">
-      <div
-        v-for="(item, index) in portfolio"
-        :key="index"
-        class="row no-gutters portfolio-item"
-      >
-        <div class="col-12">
-          <h2>{{ item.name }}</h2>
-          <p class="links">
-            <span v-for="(link, linkIndex) in item.links" :key="linkIndex">
-              <span v-if="linkIndex !== 0">&nbsp;|&nbsp;</span>
-              <a :href="link.href" target="_blank" rel="noopener noreferrer">
-                {{ link.text }}
-              </a>
-            </span>
-          </p>
+    <div
+      v-for="(item, index) in portfolio"
+      :key="index"
+      class="row no-gutters portfolio-item"
+    >
+      <div class="col-12">
+        <h2>{{ item.name }}</h2>
+        <p class="links">
+          <span v-for="(link, linkIndex) in item.links" :key="linkIndex">
+            <span v-if="linkIndex !== 0">&nbsp;|&nbsp;</span>
+            <a :href="link.href" target="_blank" rel="noopener noreferrer">
+              {{ link.text }}
+            </a>
+          </span>
+        </p>
+      </div>
+
+      <div class="col-12 col-md-7">
+        <h4>Summary</h4>
+        <div v-for="(paragraph, pIndex) in item.summary" :key="pIndex">
+          <p v-html="paragraph"></p>
         </div>
 
-        <div class="col-12 col-md-7">
-          <h4>Summary</h4>
-          <div v-for="(paragraph, pIndex) in item.summary" :key="pIndex">
-            <p v-html="paragraph"></p>
-          </div>
+        <h4>Technologies</h4>
+        <ul>
+          <li v-for="(tech, techIndex) in item.technologies" :key="techIndex">
+            {{ tech }}
+          </li>
+        </ul>
+      </div>
 
-          <h4>Technologies</h4>
-          <ul>
-            <li v-for="(tech, techIndex) in item.technologies" :key="techIndex">
-              {{ tech }}
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-12 col-md-5 image-wrapper">
-          <img :src="item.previewImage" :alt="item.previewAlt" />
-        </div>
+      <div class="col-12 col-md-5 image-wrapper">
+        <img :src="item.previewImage" :alt="item.previewAlt" />
       </div>
     </div>
   </Page>

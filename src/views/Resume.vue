@@ -90,14 +90,16 @@
           />
         </div>
 
-        <Testimonial
-          :testimonial="{
+        <Quote
+          :quote="{
+            cite: 'Annie Dillard',
+            citePosition: '<i>The Writing Life</i>',
             content:
               'How we spend our days is, of course, how we spend our lives. What we do with this hour, and that one, is what we are doing.',
           }"
         />
 
-        <div class=""><Connect /></div>
+        <Connect />
       </div>
     </div>
 
@@ -152,7 +154,7 @@ import data from "../data/app.ts";
 import ResumeItem from "@/components/ResumeItem";
 import Skill from "@/components/Skill";
 import Connect from "@/components/shared/Connect.vue";
-import Testimonial from "@/components/shared/Testimonial.vue";
+import Quote from "@/components/shared/Quote.vue";
 import Page from "@/components/shared/Page.vue";
 
 export default Vue.extend({
@@ -162,7 +164,7 @@ export default Vue.extend({
     Skill,
     Connect,
     PageHeader,
-    Testimonial,
+    Quote,
     Page,
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types

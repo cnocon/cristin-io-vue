@@ -2,7 +2,7 @@
   <div class="app">
     <Header />
     <div class="app-container main">
-      <router-view :key="$route.fullPath"></router-view>
+      <router-view :key="$route.fullPath" />
     </div>
     <Footer />
   </div>
@@ -24,7 +24,7 @@ export default {
 <style lang="scss">
 @import "@/scss/_variables.scss";
 @import "@/scss/_grid.scss";
-@import "@/scss/theme";
+@import "@/assets/scss/_theme";
 main {
   height: 100vh;
 }

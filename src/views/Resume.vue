@@ -18,5 +18,6 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 // @import "@/assets/scss/theme/_helpers.scss";
-.resume-page {}
+.resume-page {
+}
 </style>

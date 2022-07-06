@@ -40,11 +40,13 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import "@/assets/scss/theme/_helpers.scss";
 
-header {
+header.header {
   display: block;
   padding: 1.25rem 0;
   text-align: center;
   width: 100%;
+  height: 7.5rem; // 120px
+  box-shadow: $box-shadow-md;
   background-color: $primary-dark;
 
   .header-inner {
@@ -73,8 +75,12 @@ header {
   h1 {
     display: flex;
     flex-direction: column;
+    text-transform: none;
     align-items: flex-start;
-    margin-left: calc(64px + 1rem);
+
+    @media all and (min-width: $breakpoint-md) {
+      margin-left: calc(64px + 1rem);
+    }
 
     b {
       background-clip: text;
@@ -103,8 +109,12 @@ header {
     height: 64px;
     width: 64px;
     border-radius: 50%;
-    // background-color: white;
     box-shadow: $rainbow-box-shadow;
+    display: none;
+
+    @media all and (min-width: $md-breakpoint) {
+      display: block;
+    }
   }
 }
 </style>

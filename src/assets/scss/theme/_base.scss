@@ -19,6 +19,9 @@ body {
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
 }
 
 .fade-enter-active,
@@ -29,4 +32,84 @@ body {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.page {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 2rem 0 3rem;
+    line-height: 1.15em;
+  }
+
+  h2,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-tertiary;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -1.25px;
+    font-family: $font-primary;
+
+    @media all and (min-width: $md-breakpoint) {
+      font-size: 2.35rem;
+    }
+  }
+
+  h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: $font-primary;
+    font-size: 1.675rem;
+    
+    @media all and (min-width: $md-breakpoint) {
+      font-size: 1.9rem;
+    }
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+
+    @media all and (min-width: $md-breakpoint) {
+      font-size: 1.75rem;
+    }
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 1.5rem;
+
+    @media all and (min-width: $md-breakpoint) {
+      font-size: 1.25rem;
+    }
+  }
+
+  h5 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-family: $font-primary;
+    color: $text-gray;
+  }
+
+  h6 {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1rem;
+  }
 }

@@ -1,7 +1,7 @@
 <template>
   <nav role="navigation">
-    <router-link to="/" :exact="true"><span>Home</span></router-link>
-    <router-link to="/documentation"><span>Documentation</span></router-link>
+    <!--router-link to="/" :exact="true"><span>Home</span></router-link>
+    <router-link to="/documentation"><span>Documentation</span></router-link-->
     <router-link to="/resume"><span>Resumé</span></router-link>
     <router-link to="/portfolio"><span>Portfolio</span></router-link>
     <router-link to="/blog?page=1" :class="manualActiveClass">

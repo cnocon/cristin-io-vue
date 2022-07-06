@@ -40,9 +40,9 @@ export default Vue.extend({
       required: false,
     },
     text: {
-      type: String,
+      type: String || null,
       required: true,
-      default: "",
+      default: null,
     },
     alignment: {
       required: false,
@@ -78,15 +78,15 @@ export default Vue.extend({
 
 .page {
   position: relative;
-  top: 120px;
-  max-width: $lg-breakpoint;
-  margin: 0 auto;
-  padding: 1rem 0 3rem;
+  top: 4.5rem; // 72px
   width: 100%;
-  height: 100%;
+  max-width: $lg-breakpoint;
+  height: calc(100vh - 15rem); // Content height minus header + footer heights
+  margin: 0 auto;
+  padding: 0 0.875rem 3rem;
 
   @media all and (min-width: $md-breakpoint-min) {
-    padding: 3rem 0 4rem;
+    padding: 0 1.25rem 4rem;
   }
 }
 </style>

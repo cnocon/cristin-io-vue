@@ -53,7 +53,9 @@ export default Vue.extend({
 @import "@/assets/scss/theme/_helpers.scss";
 
 footer {
+  height: 7.5rem;
   background-color: $bg-gray;
+  box-shadow: $box-shadow-md;
   min-width: 100%;
   padding: 2rem 0;
 

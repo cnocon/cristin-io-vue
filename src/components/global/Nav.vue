@@ -1,12 +1,12 @@
 <template>
   <nav role="navigation">
     <router-link to="/" :exact="true"><span>Home</span></router-link>
+    <router-link to="/documentation"><span>Documentation</span></router-link>
+    <router-link to="/resume"><span>Resumé</span></router-link>
+    <router-link to="/portfolio"><span>Portfolio</span></router-link>
     <router-link to="/blog?page=1" :class="manualActiveClass">
       <span>Blog</span>
     </router-link>
-    <router-link to="/resume"><span>Resumé</span></router-link>
-    <router-link to="/portfolio"><span>Portfolio</span></router-link>
-    <router-link to="/documentation"><span>Documentation</span></router-link>
   </nav>
 </template>
 
@@ -34,13 +34,20 @@ nav {
   flex-basis: 50%;
   justify-content: flex-end;
   align-items: center;
-  height: 100%;
 
   a {
+    font-size: 1.25rem;
     flex-grow: 1;
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 1.5rem;
     color: white;
     flex-direction: column;
+    font-weight: 300;
+    font-family: $font-tertiary;
+    letter-spacing: 1px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
   }
 }
 </style>

@@ -30,7 +30,7 @@ import Vue from "vue";
 import { mapState } from "vuex";
 import PageHeader from "@/components/shared/PageHeader.vue";
 import Pagination from "@/components/shared/Pagination.vue";
-import PostCard from "@/components/post/PostCard.vue";
+import PostCard from "@/components/pages/blog/PostCard.vue";
 import Page from "@/components/shared/Page.vue";
 
 export default Vue.extend({

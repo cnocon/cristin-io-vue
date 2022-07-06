@@ -26,7 +26,7 @@
 <script lang="ts">
 import Vue from "vue";
 import moment from "moment";
-import PostMeta from "@/components/post/Meta.vue";
+import PostMeta from "@/components/pages/blog/Meta.vue"
 
 export default Vue.extend({
   name: "PostCard",

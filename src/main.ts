@@ -1,6 +1,5 @@
 import Vue from "vue"
-// import App from "./App.vue"
-import AppNew from "./AppNew.vue"
+import App from "./App.vue"
 import router from "./router"
 import store from "./store"
 import "@/config/theme/icons.ts"
@@ -11,7 +10,6 @@ Vue.component("font-awesome-icon", FontAwesomeIcon)
 Vue.config.productionTip = false
 
 // ORDER OF IMPORTS MATTERS
-import "@/assets/scss/theme/_variables.scss"
 import "@/assets/scss/theme/index.scss"
 
 // new Vue({
@@ -23,5 +21,5 @@ import "@/assets/scss/theme/index.scss"
 new Vue({
   router,
   store,
-  render: (h) => h(AppNew),
+  render: (h) => h(App),
 }).$mount("#app")

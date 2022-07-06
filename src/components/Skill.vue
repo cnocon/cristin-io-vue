@@ -31,7 +31,7 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-@import "@/assets/scss/theme/_variables.scss";
+@import "@/assets/scss/theme/_helpers.scss";
 
 .skill-unit {
   padding-bottom: 2rem;

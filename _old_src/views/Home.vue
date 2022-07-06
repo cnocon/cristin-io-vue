@@ -57,7 +57,7 @@
 import Vue from "vue"
 import { mapState } from "vuex"
 import RotatingHeader from "@/components/RotatingHeader.vue"
-import PostCard from "@/components/post/PostCard.vue"
+import PostCard from "@/components/pages/blog/PostCard.vue"
 import PageHeader from "@/components/shared/PageHeader.vue"
 import Icon from "@/components/shared/Icon.vue"
 import data from "../data/app.ts"

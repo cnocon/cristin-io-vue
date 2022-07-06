@@ -1,5 +1,5 @@
 // @import "@/assets/scss/theme/_reset.scss";
-@import "@/assets/scss/theme/_variables.scss";
+@import "@/assets/scss/theme/_helpers.scss";
 // @import "@/assets/scss/theme/_grid.scss";
 // @import "@/assets/scss/theme/_helpers.scss";
 
@@ -11,6 +11,7 @@ html {
 body {
   line-height: 1.625;
   font-weight: 400;
+  color: $text-color;
   font-family: $font-primary;
 }
 
@@ -20,20 +21,9 @@ body {
   box-sizing: border-box;
 }
 
-/* we will explain what these classes do next! */
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 1s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity .5s ease;
 }
 
 .fade-enter-from,

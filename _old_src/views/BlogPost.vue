@@ -21,7 +21,7 @@ import Vue from "vue";
 import moment from "moment";
 import { mapState } from "vuex";
 import PageHeader from "@/components/shared/PageHeader.vue";
-import PostMeta from "@/components/post/Meta.vue";
+import PostMeta from "@/components/pages/blog/Meta.vue";
 import Page from "@/components/shared/Page.vue";
 
 export default Vue.extend({

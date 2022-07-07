@@ -4,66 +4,68 @@ import { library } from "@fortawesome/fontawesome-svg-core"
  * PRO ~ SOLID
  */
 import {
-  faChartBar,
-  faRss as faRssSolid,
-  faQuoteLeft,
   faBook,
+  faChartBar,
+  faQuoteLeft,
+  faRss as faRssSolid
 } from "@fortawesome/pro-solid-svg-icons"
 /**
  * PRO ~ REGULAR
  */
 import {
-  faFolders,
-  faGraduationCap,
-  faHandshake,
-  faExclamationTriangle as faExclamationTriangleRegular,
-  faGem,
-  faCode,
-  faCheck,
   faArrowLeft,
   faArrowRight,
+  faCheck,
+  faCode,
+  faExclamationTriangle as faExclamationTriangleRegular,
+  faFolders,
+  faGem,
+  faGraduationCap,
+  faHandshake
 } from "@fortawesome/pro-regular-svg-icons"
 /**
  * PRO ~ DUOTONE
  */
 import {
   faBomb,
-  faUserAstronaut,
+  faBusinessTime,
   faClipboard,
   faConciergeBell,
   faExclamationTriangle,
   faRss,
   faTypewriter,
+  faUserAstronaut
 } from "@fortawesome/pro-duotone-svg-icons"
 /**
  * PRO ~ LIGHT
  */
 import {
   faBrackets,
-  faSubway,
-  faPencil,
-  faChartNetwork,
-  faTrophyAlt,
   faBriefcase,
-  faFileUser,
+  faChartNetwork,
   faEnvelope,
-  faHashtag,
+  faFileUser,
   faHandsHeart,
+  faHashtag,
+  faPencil,
+  faSubway,
+  faTrophyAlt
 } from "@fortawesome/pro-light-svg-icons"
 /**
  * FREE ~ BRANDS
  */
 import {
-  faJsSquare,
-  faSass,
-  faReact,
-  faGit,
-  faVuejs,
-  faNodeJs,
   faCodepen,
-  faStackOverflow,
-  faLinkedinIn,
+  faGit,
   faGithub,
+  faJsSquare,
+  faLinkedinIn,
+  faNodeJs,
+  faReact,
+  faSass,
+  faStackOverflow,
+  faTwitter,
+  faVuejs
 } from "@fortawesome/free-brands-svg-icons"
 
 library.add(
@@ -92,6 +94,7 @@ library.add(
   faVuejs,
   faNodeJs,
   faBrackets,
+  faBusinessTime,
   faSubway,
   faGem,
   faRss,
@@ -102,6 +105,7 @@ library.add(
   faStackOverflow,
   faLinkedinIn,
   faGithub,
+  faTwitter,
   faPencil,
   faGraduationCap,
   faFileUser,

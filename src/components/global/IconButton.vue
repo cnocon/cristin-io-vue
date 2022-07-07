@@ -19,19 +19,14 @@ export default Vue.extend({
       required: true,
     },
     to: {
-      type: Object || String || null,
-      default: null,
+      type: Object || String,
+      default: "/oops",
       required: false,
     },
     clickHandler: {
       type: Function || null,
       default: null,
       required: false,
-    },
-    dark: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
     size: {
       type: String,

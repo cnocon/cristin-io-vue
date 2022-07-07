@@ -20,21 +20,21 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import Nav from "@/components/global/Nav.vue"
-import avatarImg from "@/assets/images/theme/square-portrait.png"
+import Vue from "vue";
+import Nav from "@/components/global/Nav.vue";
+import avatarImg from "@/assets/images/theme/square-portrait.png";
 
 export default Vue.extend({
   name: "Header",
   data() {
     return {
       avatarImg,
-    }
+    };
   },
   components: {
     Nav,
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>

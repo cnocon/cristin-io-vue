@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import Vue, { ref } from "vue"
+import Vue, { ref } from "vue";
 
 export default Vue.extend({
   name: "RotatingHeader",
@@ -27,29 +27,29 @@ export default Vue.extend({
       ref(this.$refs.rotateable1),
       ref(this.$refs.rotateable2),
       ref(this.$refs.rotateable3),
-    ]
-    let active_index = 1
-    let prev_index = 0
-    let activeEl = refs[active_index].value
-    let prevEl = refs[prev_index].value
+    ];
+    let active_index = 1;
+    let prev_index = 0;
+    let activeEl = refs[active_index].value;
+    let prevEl = refs[prev_index].value;
 
     setInterval(() => {
       if (activeEl && prevEl) {
-        activeEl = refs[active_index].value
-        prevEl = refs[prev_index].value
+        activeEl = refs[active_index].value;
+        prevEl = refs[prev_index].value;
 
-        activeEl.classList.add("rotate-in", "active")
-        activeEl.classList.remove("rotate-out")
+        activeEl.classList.add("rotate-in", "active");
+        activeEl.classList.remove("rotate-out");
 
-        prevEl.classList.add("rotate-out")
-        prevEl.classList.remove("rotate-in", "active")
+        prevEl.classList.add("rotate-out");
+        prevEl.classList.remove("rotate-in", "active");
 
-        prev_index = prev_index >= 3 ? 0 : prev_index + 1
-        active_index = active_index >= 3 ? 0 : active_index + 1
+        prev_index = prev_index >= 3 ? 0 : prev_index + 1;
+        active_index = active_index >= 3 ? 0 : active_index + 1;
       }
-    }, 3000)
+    }, 3000);
   },
-})
+});
 </script>
 
 <style scoped lang="scss">

@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import Vue from "vue";
 
 export default Vue.extend({
   name: "SectionTitle",
@@ -27,14 +27,14 @@ export default Vue.extend({
   },
   methods: {
     handleButtonClick(e) {
-      e.preventDefault()
+      e.preventDefault();
 
       if (this.clickHandler) {
-        this.clickHandler(e)
+        this.clickHandler(e);
       }
     },
   },
-})
+});
 </script>
 
 <style scoped lang="scss">

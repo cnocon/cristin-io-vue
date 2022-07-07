@@ -6,8 +6,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import SectionTitle from "@/components/global/SectionTitle.vue"
+import Vue from "vue";
+import SectionTitle from "@/components/global/SectionTitle.vue";
 
 export default Vue.extend({
   name: "Section",
@@ -30,5 +30,5 @@ export default Vue.extend({
   components: {
     SectionTitle,
   },
-})
+});
 </script>

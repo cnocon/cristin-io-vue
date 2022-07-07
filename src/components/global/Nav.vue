@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import Vue from "vue";
 
 export default Vue.extend({
   name: "Nav",
@@ -20,10 +20,10 @@ export default Vue.extend({
       return this.$route.fullPath.split("blog").length &&
         this.$route.fullPath.split("blog").length > 1
         ? "router-link-active"
-        : ""
+        : "";
     },
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>

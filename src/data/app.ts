@@ -21,7 +21,7 @@ export default {
       classes: "rainbow-box-shadow-rounded dark",
     },
     {
-      icon: "fa-light fa-hashtag",
+      icon: "fa-brands fa-twitter",
       link: "https://twitter.com/cnocon",
       text: "Twitter",
       classes: "rainbow-box-shadow-rounded dark",

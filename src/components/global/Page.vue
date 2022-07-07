@@ -10,10 +10,12 @@
             <b v-if="text">{{ text }}</b>
           </h1>
         </div-->
-        <slot></slot>
+        <div class="page-content">
+          <slot></slot>
+        </div>
       </div>
-      <Footer />
     </main>
+    <Footer />
   </Transition>
 </template>
 
@@ -79,8 +81,7 @@ export default Vue.extend({
 .page {
   max-width: $lg-breakpoint;
   margin: 4rem auto;
-  min-height: calc(100% - 60px);
-  overflow: auto;
+  padding: 3rem 0;
 
   h1 {
     b {

@@ -2,10 +2,10 @@
   <Page :text="``">
     <RotatingHeader />
     <IconButton
-      size="3x"
-      icon="fa-light fa-briefcase"
+      icon="fa-duotone fa-business-time"
       :clickHandler="handleClick"
     />
+    <Connections />
   </Page>
 </template>
 
@@ -14,6 +14,7 @@ import Vue from "vue"
 import Page from "@/components/global/Page.vue"
 import IconButton from "@/components/global/IconButton.vue"
 import RotatingHeader from "@/components/pages/home/RotatingHeader.vue"
+import Connections from "@/components/global/Connections.vue"
 
 export default Vue.extend({
   name: "Home",
@@ -21,6 +22,7 @@ export default Vue.extend({
     Page,
     RotatingHeader,
     IconButton,
+    Connections,
   },
   methods: {
     handleClick(e) {
@@ -35,8 +37,8 @@ export default Vue.extend({
 // @import "@/assets/scss/theme/_helpers.scss";
 .home-page {
   svg {
-    width: 40px;
-    height: 40px;
+    width: 2.5rem; // 40px
+    height: 2.5rem; // 40px
   }
 }
 </style>

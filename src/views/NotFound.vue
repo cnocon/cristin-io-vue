@@ -13,7 +13,7 @@
             class="button button-primary"
             @click="
               (e) => {
-                window ? window.alert('But don\'t really...') : null
+                window ? window.alert('But don\'t really...') : null;
               }
             "
             >Pretend to leave, but don't really.</router-link
@@ -28,8 +28,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import Page from "@/components/global/Page.vue"
+import Vue from "vue";
+import Page from "@/components/global/Page.vue";
 
 export default Vue.extend({
   name: "NotFound",
@@ -39,14 +39,14 @@ export default Vue.extend({
   data() {
     return {
       pathNotFound: this.$router.currentRoute.fullPath,
-    }
+    };
   },
   created() {
     if (!this.pathNotFound.length) {
-      this.pathNotFound = this.$router.currentRoute.fullPath
+      this.pathNotFound = this.$router.currentRoute.fullPath;
     }
   },
-})
+});
 </script>
 
 <style scoped lang="scss">

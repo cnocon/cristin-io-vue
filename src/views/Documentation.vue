@@ -21,20 +21,11 @@ export default Vue.extend({
     Page,
     ExampleContent,
   },
-  data() {
-    return {
-      colors: {
-        type: Object,
-        required: false,
-        default: [],
-      },
-    }
-  },
 })
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/theme/_helpers.scss";
+// @import "@/assets/scss/theme/_helpers.scss";
 .documentation-page {
   background-color: white;
 }

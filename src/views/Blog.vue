@@ -9,15 +9,15 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import Page from "@/components/global/Page.vue"
+import Vue from "vue";
+import Page from "@/components/global/Page.vue";
 
 export default Vue.extend({
   name: "Blog",
   components: {
     Page,
   },
-})
+});
 </script>
 
 <style scoped lang="scss">

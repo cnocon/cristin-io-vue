@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import Page from "@/components/global/Page.vue"
+import Vue from "vue";
+import Page from "@/components/global/Page.vue";
 
 export default Vue.extend({
   name: "Portfolio",
@@ -166,9 +166,9 @@ export default Vue.extend({
           previewAlt: "CenturyLink Small Business Website (for Clearlink)",
         },
       ],
-    }
+    };
   },
-})
+});
 </script>
 
 <style scoped lang="scss">

@@ -26,8 +26,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import Section from "@/components/global/Section.vue"
+import Vue from "vue";
+import Section from "@/components/global/Section.vue";
 export default Vue.extend({
   name: "ExampleContent",
   data() {
@@ -37,12 +37,12 @@ export default Vue.extend({
         default: [],
         required: false,
       },
-    }
+    };
   },
   components: {
     Section,
   },
-})
+});
 </script>
 
 <style lang="scss" scoped>

@@ -1,6 +1,11 @@
 <template>
-  <Page classes="resume-page" text="Résumé" icon="fa-duotone fa-clipboard">
-    <p>Resume!</p>
+  <Page
+    classes="resume-page"
+    text="Résumé"
+    icon="fa-duotone fa-clipboard"
+    alignment="center"
+  >
+    <p>Resume Page!!</p>
   </Page>
 </template>
 
@@ -18,6 +23,4 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 // @import "@/assets/scss/theme/_helpers.scss";
-.resume-page {
-}
 </style>

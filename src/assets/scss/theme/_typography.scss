@@ -82,4 +82,18 @@
     letter-spacing: 1px;
     font-size: 1rem;
   }
+
+  sup,
+  sub {
+    display: inline-block;
+    font-size: .7em;
+    text-transform: lowercase;
+  }
+
+  sup {
+    transform: translateY(-0.75em);
+  }
+  sub {
+    transform: translateY(0.25em);
+  }
 }

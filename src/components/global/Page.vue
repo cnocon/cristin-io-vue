@@ -3,12 +3,13 @@
     <main v-if="show">
       <Header />
       <div class="page" :class="classes">
-        <div :class="alignment ? `align-${alignment}` : ``">
+        <PageHeader :text="text" :alignment="alignment" :icon="icon" />
+        <!--div :class="alignment ? `align-${alignment}` : ``">
           <h1>
             <font-awesome-icon :icon="icon" v-if="icon" />
             <b v-if="text">{{ text }}</b>
           </h1>
-        </div>
+        </div-->
         <slot></slot>
       </div>
       <Footer />
@@ -20,6 +21,7 @@
 import Vue from "vue"
 import Header from "@/components/global/Header.vue"
 import Footer from "@/components/global/Footer.vue"
+import PageHeader from "@/components/global/PageHeader.vue"
 
 export default Vue.extend({
   name: "Page",
@@ -38,9 +40,9 @@ export default Vue.extend({
       required: false,
     },
     text: {
-      type: String || null,
-      required: false,
-      default: null,
+      type: String,
+      required: true,
+      default: "",
     },
     alignment: {
       required: false,
@@ -55,6 +57,7 @@ export default Vue.extend({
   components: {
     Footer,
     Header,
+    PageHeader,
   },
   computed: {
     contentHeight() {

@@ -254,13 +254,13 @@ $nav-text: lighten($border-dark-gray, 7.5%);
 
 $primary-dark: darken($color-primary, 10%);
 $primary: #344556;
-$primary-light: lighten($color-primary, 25%);
+// $primary-light: lighten($color-primary, 25%);
 
 $text-color: #222222;
 $body-color: $text-color;
 $primary: #334455;
 $primary-dark: #1e2b38;
-$primary-light: #5a7896;
+$primary-light: lighten(#5a7896, 40%);
 $duotone-gray: #afb4bb;
 $accent-blue: $link-blue;
 $accent-green: $link-green;

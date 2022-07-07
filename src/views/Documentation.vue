@@ -2,26 +2,23 @@
   <Page
     classes="documentation-page"
     text="Developer Docs"
-    icon="fa-solid fa-book"
     alignment="center"
+    icon="fa-duotone fa-typewriter"
   >
-    <Section>
-      <ExampleContent />
-    </Section>
+    <ExampleContent />
+    <ExampleContent />
   </Page>
 </template>
 
 <script lang="ts">
 import Vue from "vue"
 import Page from "@/components/global/Page.vue"
-import Section from "@/components/global/Section.vue"
 import ExampleContent from "@/components/pages/documentation/ExampleContent.vue"
 
 export default Vue.extend({
   name: "Documentation",
   components: {
     Page,
-    Section,
     ExampleContent,
   },
   data() {

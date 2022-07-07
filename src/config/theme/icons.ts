@@ -33,6 +33,7 @@ import {
   faConciergeBell,
   faExclamationTriangle,
   faRss,
+  faTypewriter,
 } from "@fortawesome/pro-duotone-svg-icons"
 /**
  * PRO ~ LIGHT
@@ -74,6 +75,7 @@ library.add(
   faTrophyAlt,
   faBomb,
   faCode,
+  faTypewriter,
   faHashtag,
   faHandsHeart,
   faExclamationTriangle,

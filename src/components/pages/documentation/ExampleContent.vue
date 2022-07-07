@@ -1,16 +1,14 @@
 <template>
   <div class="example-content">
-    <Section classes="text-center">
+    <!--<Section classes="text-center">
       <h1>Table of Contents</h1>
       <ul>
         <li><a href="#typography">Typography</a></li>
         <li><a href="#colors">Colors</a></li>
       </ul>
-    </Section>
+    </Section>-->
+    <SectionTitle text="Typography" icon="fa-duotone fa-typewriter" />
     <Section id="typography">
-      <hr />
-      <h2>Typography</h2>
-      <hr />
       <h1>Short Version of a Heading One (or H1)</h1>
       <h2>Heading Two</h2>
       <h3>Third Heading</h3>
@@ -28,6 +26,7 @@
 <script lang="ts">
 import Vue from "vue"
 import Section from "@/components/global/Section.vue"
+import SectionTitle from "@/components/global/SectionTitle.vue"
 
 export default Vue.extend({
   name: "ExampleContent",
@@ -42,6 +41,7 @@ export default Vue.extend({
   },
   components: {
     Section,
+    SectionTitle,
   },
 })
 </script>

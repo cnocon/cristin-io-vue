@@ -4,12 +4,10 @@
       <Header />
       <div class="page" :class="classes">
         <div :class="alignment ? `align-${alignment}` : ``">
-          <h2>
-            <span>
-              <font-awesome-icon :icon="icon" v-if="icon" />
-              <b v-if="text">{{ text }}</b>
-            </span>
-          </h2>
+          <h1>
+            <font-awesome-icon :icon="icon" v-if="icon" />
+            <b v-if="text">{{ text }}</b>
+          </h1>
         </div>
         <slot></slot>
       </div>
@@ -79,20 +77,30 @@ export default Vue.extend({
   max-width: $lg-breakpoint;
   margin: 4rem auto;
   min-height: calc(100% - 60px);
-  // max-height: 100vh;
   overflow: auto;
-}
-// .page {
-//   position: relative;
-//   top: 4.5rem; // 72px
-//   width: 100%;
-//   max-width: $lg-breakpoint;
-//   height: calc(100vh - 15rem); // Content height minus header + footer heights
-//   margin: 0 auto;
-//   padding: 0 0.875rem 3rem;
 
-//   @media all and (min-width: $md-breakpoint-min) {
-//     padding: 0 1.25rem 4rem;
-//   }
-// }
+  h1 {
+    b {
+      display: inline-block;
+      line-height: 54px;
+      vertical-align: bottom;
+      color: $duotone-gray;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      @media all and (min-width: $md-breakpoint) {
+        margin-left: 0.75rem;
+      }
+    }
+
+    svg {
+      color: $primary;
+      min-height: 46px;
+      min-width: 54px;
+      margin: 0 9px;
+    }
+  }
+}
 </style>

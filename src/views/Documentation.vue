@@ -1,7 +1,7 @@
 <template>
   <Page
     classes="documentation-page"
-    text="Documentation &amp; Examples"
+    text="Developer Docs"
     icon="fa-solid fa-book"
     alignment="center"
   >

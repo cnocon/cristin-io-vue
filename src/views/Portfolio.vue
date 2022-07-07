@@ -6,7 +6,7 @@
   </Page>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue"
 import Page from "@/components/global/Page.vue"
 
@@ -47,7 +47,8 @@ export default Vue.extend({
             "Webpack",
             "Storybook",
           ],
-          previewImage: "https://www.dropbox.com/s/h1fk109v2aluaoz/stats-card.png?dl=1",
+          previewImage:
+            "https://www.dropbox.com/s/h1fk109v2aluaoz/stats-card.png?dl=1",
           previewAlt: "GitHub Stats Card for React Component",
         },
         {
@@ -73,7 +74,8 @@ export default Vue.extend({
             "React",
             "React Context API",
           ],
-          previewImage: "https://www.dropbox.com/s/eo7a2yqya792c5n/flashcards.png?dl=1",
+          previewImage:
+            "https://www.dropbox.com/s/eo7a2yqya792c5n/flashcards.png?dl=1",
           previewAlt: "Front End Development Flash Cards Application",
         },
         {
@@ -98,7 +100,8 @@ export default Vue.extend({
             "Open Weather API",
             "Bootstrap",
           ],
-          previewImage: "https://www.dropbox.com/s/30e7e2v8qp4yu49/weather.png?dl=1",
+          previewImage:
+            "https://www.dropbox.com/s/30e7e2v8qp4yu49/weather.png?dl=1",
           previewAlt: "Weather Charts Application",
         },
         {
@@ -117,7 +120,8 @@ export default Vue.extend({
             "CRISTIN.IO is an <b>obvious</b> virtual wonderland that includes a front end web development blog authored by yours truly, my résumé, portfolio (surprise!), and some general information about me and the services I offer.",
           ],
           technologies: ["Vue", "Vuex", "Vue Router", "ButterCMS API"],
-          previewImage: "https://www.dropbox.com/s/r9luh3jymxesfus/cristin-io.png?dl=1",
+          previewImage:
+            "https://www.dropbox.com/s/r9luh3jymxesfus/cristin-io.png?dl=1",
           previewAlt: "CRISTIN.IO Website",
         },
         {
@@ -134,7 +138,8 @@ export default Vue.extend({
           ],
           summary: ["Search for and watch content from YouTube."],
           technologies: ["YouTube API V3", "React", "Bootstrap"],
-          previewImage: "https://www.dropbox.com/s/3gc2omblwyfpgz2/youtube.png?dl=1",
+          previewImage:
+            "https://www.dropbox.com/s/3gc2omblwyfpgz2/youtube.png?dl=1",
           previewAlt: "YouTube Search Application",
         },
         {
@@ -156,7 +161,8 @@ export default Vue.extend({
             "JavaScript (ES6)",
             "PHP",
           ],
-          previewImage: "https://www.dropbox.com/s/b9kw7gs380pfwck/clq.png?dl=1",
+          previewImage:
+            "https://www.dropbox.com/s/b9kw7gs380pfwck/clq.png?dl=1",
           previewAlt: "CenturyLink Small Business Website (for Clearlink)",
         },
       ],
@@ -167,5 +173,6 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 // @import "@/assets/scss/theme/_helpers.scss";
-.portfolio-page {}
+.portfolio-page {
+}
 </style>

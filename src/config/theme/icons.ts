@@ -5,6 +5,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
  */
 import {
   faChartBar,
+  faRss as faRssSolid,
   faQuoteLeft,
   faBook,
 } from "@fortawesome/pro-solid-svg-icons"
@@ -15,7 +16,7 @@ import {
   faFolders,
   faGraduationCap,
   faHandshake,
-  faExclamationTriangle,
+  faExclamationTriangle as faExclamationTriangleRegular,
   faGem,
   faCode,
   faCheck,
@@ -28,7 +29,9 @@ import {
 import {
   faBomb,
   faUserAstronaut,
+  faClipboard,
   faConciergeBell,
+  faExclamationTriangle,
   faRss,
 } from "@fortawesome/pro-duotone-svg-icons"
 /**
@@ -73,6 +76,7 @@ library.add(
   faCode,
   faHashtag,
   faHandsHeart,
+  faExclamationTriangle,
   faUserAstronaut,
   faHandshake,
   faJsSquare,
@@ -80,7 +84,9 @@ library.add(
   faQuoteLeft,
   faReact,
   faBriefcase,
+  faClipboard,
   faGit,
+  faRssSolid,
   faVuejs,
   faNodeJs,
   faBrackets,
@@ -98,5 +104,6 @@ library.add(
   faGraduationCap,
   faFileUser,
   faExclamationTriangle,
+  faExclamationTriangleRegular,
   faChartBar
 )

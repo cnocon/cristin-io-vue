@@ -43,7 +43,7 @@ const routes: Array<RouteConfig> = [
   //   props: true,
   // },
   {
-    path: "/:pathMatch(.*)",
+    path: "/:badurl(.*)",
     name: "404",
     component: NotFound,
   },

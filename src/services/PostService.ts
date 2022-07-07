@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios from "axios";
-const VUE_APP_BUTTERCMS_API_TOKEN = process.env.VUE_APP_BUTTERCMS_API_TOKEN;
+import axios from "axios"
+const VUE_APP_BUTTERCMS_API_TOKEN = process.env.VUE_APP_BUTTERCMS_API_TOKEN
 // const butter = require("buttercms")(VUE_APP_BUTTERCMS_API_TOKEN);
-import Butter from "buttercms";
-const butter = Butter(VUE_APP_BUTTERCMS_API_TOKEN);
+import Butter from "buttercms"
+const butter = Butter(VUE_APP_BUTTERCMS_API_TOKEN)
 
 // const apiClient = axios.create({
 //   baseURL: "https://api.buttercms.com/v2",
@@ -21,15 +21,15 @@ export default {
     perPage,
     excludeBody,
   }: {
-    page: number;
-    perPage: number;
-    excludeBody: boolean;
+    page: number
+    perPage: number
+    excludeBody: boolean
   }) {
     return butter.post.list({
       page: page,
       pageSize: perPage,
       excludeBody: excludeBody,
-    });
+    })
     // .then(function (response: any) {
     //   console.log(response);
     //   return response;
@@ -40,9 +40,9 @@ export default {
   },
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   getPost(payload: string) {
-    return butter.post.retrieve(payload);
+    return butter.post.retrieve(payload)
     // .catch((res) => {
     //   console.log(res);
     // });
   },
-};
+}

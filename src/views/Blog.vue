@@ -8,7 +8,7 @@
   </Page>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue"
 import Page from "@/components/global/Page.vue"
 

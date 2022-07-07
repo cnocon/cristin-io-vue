@@ -3,11 +3,11 @@
     <main v-if="show">
       <Header />
       <div class="page" :class="classes">
-        <div :class="`align-${alignment}`">
+        <div :class="alignment ? `align-${alignment}` : ``">
           <h2>
             <span>
               <font-awesome-icon :icon="icon" v-if="icon" />
-              <b>{{ text }}</b>
+              <b v-if="text">{{ text }}</b>
             </span>
           </h2>
         </div>
@@ -41,7 +41,7 @@ export default Vue.extend({
     },
     text: {
       type: String || null,
-      required: true,
+      required: false,
       default: null,
     },
     alignment: {
@@ -75,18 +75,24 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import "@/assets/scss/theme/_helpers.scss";
-
 .page {
-  position: relative;
-  top: 4.5rem; // 72px
-  width: 100%;
   max-width: $lg-breakpoint;
-  height: calc(100vh - 15rem); // Content height minus header + footer heights
-  margin: 0 auto;
-  padding: 0 0.875rem 3rem;
-
-  @media all and (min-width: $md-breakpoint-min) {
-    padding: 0 1.25rem 4rem;
-  }
+  margin: 4rem auto;
+  min-height: calc(100% - 60px);
+  // max-height: 100vh;
+  overflow: auto;
 }
+// .page {
+//   position: relative;
+//   top: 4.5rem; // 72px
+//   width: 100%;
+//   max-width: $lg-breakpoint;
+//   height: calc(100vh - 15rem); // Content height minus header + footer heights
+//   margin: 0 auto;
+//   padding: 0 0.875rem 3rem;
+
+//   @media all and (min-width: $md-breakpoint-min) {
+//     padding: 0 1.25rem 4rem;
+//   }
+// }
 </style>

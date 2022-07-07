@@ -284,3 +284,23 @@ $text-gray: darken($duotone-gray, 10%);
   text-transform: uppercase;
   font-size: 1.5rem;
 }
+
+// MAIN COLORS
+$purple: hsl(240, 90%, 65%);
+$red: $border-red-vivid;
+$green: $link-green;
+$blue: $link-blue;
+$highlighter: hsl(58, 100%, 78%);
+$yellow: gold;
+
+
+
+@mixin icon-round-rainbow-border {
+  line-height: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 1rem;
+  box-shadow: $rainbow-box-shadow-dark;
+  padding: 0.5rem;
+  box-shadow: 0 2px #47ebdd, -2px 0 #fff833, 2px 0 #7171ef, 0 -2px 0 #f1818a;
+}

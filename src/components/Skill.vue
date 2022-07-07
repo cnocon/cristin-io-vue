@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from "vue"
 
 export default Vue.extend({
   name: "Skill",
@@ -24,10 +24,10 @@ export default Vue.extend({
   },
   computed: {
     progressStyle() {
-      return { width: `${this.skill.percent}%` };
+      return { width: `${this.skill.percent}%` }
     },
   },
-});
+})
 </script>
 
 <style scoped lang="scss">

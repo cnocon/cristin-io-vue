@@ -1,0 +1,42 @@
+// @import "@/assets/scss/theme/_reset.scss";
+@import "@/assets/scss/theme/_helpers.scss";
+// @import "@/assets/scss/theme/_grid.scss";
+// @import "@/assets/scss/theme/_helpers.scss"
+
+button,
+a.button {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: $font-tertiary;
+  font-weight: 500;
+  border-radius: 4px;
+  box-shadow: $box-shadow-md;
+  padding: 0.5rem 1rem;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary;
+    color: white;
+  }
+
+  &.button-primary {
+    background-color: $purple; // lighten($primary-light, 10%);
+    color: white;
+  }
+
+  &.button-secondary {
+    background-color: $primary;
+    color: white;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($primary-light, 10%);
+      color: $black;
+    }
+  }
+
+}
+
+

@@ -1,4 +1,4 @@
-import { VueLoaderPlugin } from "vue-loader";
+import { VueLoaderPlugin } from "vue-loader"
 
 export const module = {
   rules: [
@@ -14,8 +14,8 @@ export const module = {
       use: ["vue-style-loader", "css-loader", "sass-loader"],
     },
   ],
-};
+}
 export const plugins = [
   // make sure to include the plugin!
   new VueLoaderPlugin(),
-];
+]

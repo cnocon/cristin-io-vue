@@ -1,21 +1,26 @@
 <template>
   <div class="example-content">
-    <Section>
+    <Section classes="text-center">
+      <h1>Table of Contents</h1>
       <ul>
         <li><a href="#typography">Typography</a></li>
+        <li><a href="#colors">Colors</a></li>
       </ul>
     </Section>
-    <Section>
-      <header>
-        <h2 id="typography">Typography</h2>
-        <hr />
-        <h1>Short Version of a Heading One (or H1)</h1>
-        <h2>Heading Two</h2>
-        <h3>Third Heading</h3>
-        <h4>Fourth Heading</h4>
-        <h5>A 5<sup>th</sup> Heading</h5>
-        <h6>Heading Six</h6>
-      </header>
+    <Section id="typography">
+      <hr />
+      <h2>Typography</h2>
+      <hr />
+      <h1>Short Version of a Heading One (or H1)</h1>
+      <h2>Heading Two</h2>
+      <h3>Third Heading</h3>
+      <h4>Fourth Heading</h4>
+      <h5>A 5<sup>th</sup> Heading</h5>
+      <h6>Heading Six</h6>
+    </Section>
+    <Section id="colors" v-if="colors">
+      <h2>Colors</h2>
+      <div v-for="color in colors" :key="color.name" class="swatch" />
     </Section>
   </div>
 </template>
@@ -26,6 +31,15 @@ import Section from "@/components/global/Section.vue"
 
 export default Vue.extend({
   name: "ExampleContent",
+  data() {
+    return {
+      colors: {
+        type: Object,
+        default: [],
+        required: false,
+      },
+    }
+  },
   components: {
     Section,
   },

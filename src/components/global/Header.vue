@@ -39,6 +39,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import "@/assets/scss/theme/_helpers.scss";
+@import "@/assets/scss/theme/_variables.scss";
 
 header.header {
   display: block;
@@ -62,26 +63,38 @@ header.header {
   .site-title,
   .nav-wrapper {
     display: flex;
-    // flex-direction: column;
-    // flex-basis: 50%;
   }
 
   .site-title {
     flex-shrink: 1;
     align-items: center;
     justify-content: flex-start;
+
+
+    h1 {
+      display: flex;
+      flex-direction: column;
+      text-transform: none;
+      align-items: flex-start;
+
+      @media all and (min-width: $breakpoint-md) {
+        margin-left: calc(64px + 1rem);
+      }
+    }
+
+    b {
+      color: transparent;
+      transition: color 0.2s ease-in-out;
+    }
+
+    &:hover {
+      b {
+        color: $highlight-yellow;
+      }
+    }
   }
 
   h1 {
-    display: flex;
-    flex-direction: column;
-    text-transform: none;
-    align-items: flex-start;
-
-    @media all and (min-width: $breakpoint-md) {
-      margin-left: calc(64px + 1rem);
-    }
-
     b {
       background-clip: text;
       background-image: $rainbow-gradient-dark;
@@ -89,6 +102,7 @@ header.header {
       font-family: $font-brand;
       font-size: 2.25rem;
       color: transparent;
+      transition: all .2s ease-in-out;
     }
 
     i {
@@ -109,7 +123,7 @@ header.header {
     height: 64px;
     width: 64px;
     border-radius: 50%;
-    box-shadow: $rainbow-box-shadow;
+    box-shadow: $rainbow-box-shadow-lg;
     display: none;
 
     @media all and (min-width: $md-breakpoint) {

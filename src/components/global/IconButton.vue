@@ -1,10 +1,13 @@
 <template>
-  <a v-if="to" :href="to" class="icon-link">
-    <font-awesome-icon :icon="icon" size="2x" />
-  </a>
-  <button v-else v-on:click="handleButtonClick" class="icon-button">
-    <font-awesome-icon :icon="icon" size="2x" />
-  </button>
+  <div class="icon-container">
+    <a v-if="to" :href="to" class="icon-link">
+      <font-awesome-icon :icon="icon" size="2x" />
+    </a>
+    <button v-else v-on:click="handleButtonClick" class="icon-button">
+      <font-awesome-icon :icon="icon" size="2x" />
+    </button>
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,7 +22,7 @@ export default Vue.extend({
       required: true,
     },
     to: {
-      type: Object || String,
+      type: Object || String || null,
       default: "/oops",
       required: false,
     },
@@ -48,13 +51,43 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 @import "@/assets/scss/theme/_helpers.scss";
-.icon-button {
+.icon-container {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem auto 2rem;
+  flex-wrap: wrap;
   cursor: pointer;
-  @include icon-round-rainbow-border;
 
-  svg {
-    width: 40px;
-    height: 40px;
+
+  .icon-button,
+  .icon-link {
+    color: #fff;
+    background-color: $primary;
+    transition: all .2s ease-in-out;
+    @include icon-round-rainbow-border;
+
+    &:hover {
+      background-color: $bg-med-gray;
+      color: $primary;
+
+      svg {
+        fill: #fff;
+        stroke: #fff;
+      }
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  a + a {
+    width: 100%;
+    display: block;
+    line-height: 1.25;
+    @include body-accent-text;
   }
 }
 </style>

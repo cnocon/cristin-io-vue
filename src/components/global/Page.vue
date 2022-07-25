@@ -4,18 +4,12 @@
       <Header />
       <div class="page" :class="classes">
         <PageHeader :text="text" :alignment="alignment" :icon="icon" />
-        <!--div :class="alignment ? `align-${alignment}` : ``">
-          <h1>
-            <font-awesome-icon :icon="icon" v-if="icon" />
-            <b v-if="text">{{ text }}</b>
-          </h1>
-        </div-->
         <div class="page-content">
           <slot></slot>
         </div>
       </div>
+      <Footer />
     </main>
-    <Footer />
   </Transition>
 </template>
 

@@ -1,13 +1,16 @@
 <template>
   <ul>
-    <li :v-for="connect in connections" :v-key="connect.link">
+    <li v-for="connect in connections" v-bind:key="connect.link">
       <IconButton
         :icon="connect.icon"
-        :to="connect.link"
+        v-on:click="window ? window.location.pathname(connect.link) : null"
         target="_blank"
         rel="noopener noreferrer"
-        >{{ connect.text }}</IconButton
       >
+        <a :href="connect.link" target="_blank" rel="noopener noreferrer">{{
+          connect.text
+        }}</a>
+      </IconButton>
     </li>
   </ul>
 </template>
@@ -63,9 +66,30 @@ export default Vue.extend({
       ],
     }
   },
+  methods: {
+    handleClick(e) {
+      e.preventDefault()
+      this.$router.push("/resume")
+    },
+  },
 })
 </script>
 
 <style scoped lang="scss">
-// @import "@/assets/scss/theme/_helpers.scss";
+@import "@/assets/scss/theme/_helpers.scss";
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  li {
+    flex-grow: 1;
+    flex-direction: column;
+    flex-basis: calc(100% / 6);
+  }
+  .easter-egg-button {
+    content: "HI CRISTIN!";
+    display: block;
+  }
+}
 </style>

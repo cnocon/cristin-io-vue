@@ -5,8 +5,13 @@
     alignment="center"
     icon="fa-duotone fa-typewriter"
   >
+    <br />
+    <hr />
+    <br />
     <ExampleContent />
-    <ExampleContent />
+    <br />
+    <hr />
+    <br />
   </Page>
 </template>
 
@@ -20,6 +25,23 @@ export default Vue.extend({
   components: {
     Page,
     ExampleContent,
+  },
+  data: function () {
+    return {
+      message: "Hello",
+    }
+  },
+  computed: {
+    // a computed getter
+    reversedMessage: function () {
+      // `this` points to the vm instance
+      return this.message.split("").reverse().join("")
+    },
+  },
+  mounted() {
+    console.log(this.reversedMessage) // => 'olleH'
+    this.message = "Goodbye"
+    console.log(this.reversedMessage) // => 'eybdooG'
   },
 })
 </script>

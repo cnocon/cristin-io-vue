@@ -1,5 +1,5 @@
 /* import the fontawesome core */
-import { library } from "@fortawesome/fontawesome-svg-core"
+import { library } from "@fortawesome/fontawesome-svg-core";
 /**
  * PRO ~ SOLID
  */
@@ -8,7 +8,7 @@ import {
   faChartBar,
   faQuoteLeft,
   faRss as faRssSolid
-} from "@fortawesome/pro-solid-svg-icons"
+} from "@fortawesome/pro-solid-svg-icons";
 /**
  * PRO ~ REGULAR
  */
@@ -22,7 +22,7 @@ import {
   faGem,
   faGraduationCap,
   faHandshake
-} from "@fortawesome/pro-regular-svg-icons"
+} from "@fortawesome/pro-regular-svg-icons";
 /**
  * PRO ~ DUOTONE
  */
@@ -32,10 +32,11 @@ import {
   faClipboard,
   faConciergeBell,
   faExclamationTriangle,
+  faQuestionCircle,
   faRss,
   faTypewriter,
   faUserAstronaut
-} from "@fortawesome/pro-duotone-svg-icons"
+} from "@fortawesome/pro-duotone-svg-icons";
 /**
  * PRO ~ LIGHT
  */
@@ -50,7 +51,7 @@ import {
   faPencil,
   faSubway,
   faTrophyAlt
-} from "@fortawesome/pro-light-svg-icons"
+} from "@fortawesome/pro-light-svg-icons";
 /**
  * FREE ~ BRANDS
  */
@@ -66,7 +67,7 @@ import {
   faStackOverflow,
   faTwitter,
   faVuejs
-} from "@fortawesome/free-brands-svg-icons"
+} from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faCheck,
@@ -86,6 +87,7 @@ library.add(
   faJsSquare,
   faSass,
   faQuoteLeft,
+  faQuestionCircle,
   faReact,
   faBriefcase,
   faClipboard,
@@ -112,4 +114,4 @@ library.add(
   faExclamationTriangle,
   faExclamationTriangleRegular,
   faChartBar
-)
+);
